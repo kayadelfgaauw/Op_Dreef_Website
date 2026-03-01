@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brutal-offwhite text-brutal-black font-grotesk overflow-x-hidden antialiased;
+  }
+}
+
+@layer utilities {
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+  }
+
+  /* Text Stroke Utility */
+  .stroke-text {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #111111;
+  }
+}
+
+/* Custom Selection */
+::selection {
+  @apply bg-brutal-red text-brutal-paper;
+}
+
+/* Keyframes for simple visual effects */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
