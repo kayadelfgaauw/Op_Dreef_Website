@@ -23,6 +23,12 @@ export default function Home() {
                 .from('.hero-headline', { y: 100, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
                 .from('.hero-btn', { scale: 0, opacity: 0, duration: 0.5, stagger: 0.1, ease: "back.out(1.7)" }, "-=0.4");
 
+            // Hero Image Color-in
+            gsap.fromTo('.hero-bg-img',
+                { filter: 'grayscale(60%) contrast(110%) brightness(0.9)' },
+                { filter: 'grayscale(0%) contrast(100%) brightness(1)', duration: 3, delay: 0.5 }
+            );
+
             // Over Ons Image Animation
             gsap.fromTo('.intro-image-container',
                 { y: 50, opacity: 0 },
@@ -39,15 +45,15 @@ export default function Home() {
             );
 
             gsap.fromTo('.intro-image',
-                { scale: 1.15 },
+                { scale: 1.15, filter: 'grayscale(60%) contrast(110%) brightness(0.9)' },
                 {
                     scale: 1,
+                    filter: 'grayscale(0%) contrast(100%) brightness(1)',
+                    duration: 2,
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: overOnsRef.current,
-                        start: "top 70%",
-                        end: "bottom top",
-                        scrub: true
+                        start: "top 65%",
                     }
                 }
             );
@@ -113,7 +119,7 @@ export default function Home() {
                     <img
                         src="https://images.unsplash.com/photo-1558981420-c532902e58b4?auto=format&fit=crop&q=80&w=2500"
                         alt="Motorcycle engine detail, stark industrial lighting"
-                        className="w-full h-full object-cover filter grayscale contrast-125"
+                        className="hero-bg-img w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-brutal-black/40"></div>
                     {/* Boot sequence curtain */}

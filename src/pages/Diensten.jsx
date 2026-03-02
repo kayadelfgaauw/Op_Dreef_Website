@@ -25,6 +25,7 @@ const services = [
 export default function Diensten() {
     const containerRef = useRef(null);
     const headerDrawerRef = useRef(null);
+    const imageRef = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -36,6 +37,23 @@ export default function Diensten() {
                 ease: "power4.out",
                 delay: 0.2
             });
+
+            // Image slide in effect
+            if (imageRef.current) {
+                gsap.from(imageRef.current, {
+                    xPercent: -50,
+                    opacity: 0,
+                    rotation: -10,
+                    duration: 1.2,
+                    ease: "power4.out",
+                    delay: 0.4
+                });
+
+                gsap.fromTo(imageRef.current.querySelector('img'),
+                    { filter: 'grayscale(60%) contrast(110%) brightness(0.9)' },
+                    { filter: 'grayscale(0%) contrast(100%) brightness(1)', duration: 3, delay: 0.5 }
+                );
+            }
 
             // Airport departure board stagger
             gsap.from('.service-row', {
@@ -60,11 +78,25 @@ export default function Diensten() {
         <div ref={containerRef} className="w-full bg-brutal-paper min-h-screen pb-40">
 
             {/* HEADER: Index Card Flip Mechanism */}
-            <section className="pt-32 px-6 mb-20 overflow-hidden">
-                <div className="max-w-7xl mx-auto flex justify-end">
+            <section className="pt-32 px-6 mb-20 overflow-hidden relative">
+                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-center relative">
+
+                    {/* Image Section (Left) */}
+                    <div
+                        ref={imageRef}
+                        className="w-full lg:w-1/2 relative z-0 lg:-mr-16 mb-12 lg:mb-0"
+                    >
+                        <img
+                            src="/Images/Diensten.webp"
+                            alt="Onze Diensten"
+                            className="w-full h-[400px] lg:h-[600px] object-cover object-left border-8 border-brutal-black shadow-[15px_15px_0_#E63B2E] transition-transform duration-700 -rotate-2 hover:rotate-0"
+                        />
+                    </div>
+
+                    {/* Text Section (Right) */}
                     <div
                         ref={headerDrawerRef}
-                        className="w-full lg:w-2/3 bg-brutal-black text-brutal-paper p-12 lg:p-20 border-l-8 border-brutal-red relative shadow-[-20px_20px_0_#111111]"
+                        className="w-full lg:w-2/3 bg-brutal-black text-brutal-paper p-12 lg:p-20 border-l-8 border-brutal-red relative shadow-[-20px_20px_0_#111111] z-10 lg:ml-auto"
                     >
                         <div className="absolute top-4 right-4 font-mono text-xs opacity-50 uppercase tracking-widest">
                             OVERZICHT DIENSTEN

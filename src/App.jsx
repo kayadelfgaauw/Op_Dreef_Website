@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import OnsTeam from './pages/OnsTeam';
 import Diensten from './pages/Diensten';
 import Contact from './pages/Contact';
+import Werkplaats from './pages/Werkplaats';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="ons-team" element={<OnsTeam />} />
+                    <Route path="werkplaats" element={<Werkplaats />} />
                     <Route path="diensten" element={<Diensten />} />
                     <Route path="contact" element={<Contact />} />
                 </Route>

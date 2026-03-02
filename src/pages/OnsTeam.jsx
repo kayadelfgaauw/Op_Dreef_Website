@@ -37,9 +37,10 @@ export default function OnsTeam() {
                 );
 
                 gsap.fromTo(profile.querySelector('.profile-img'),
-                    { filter: 'grayscale(100%) contrast(120%) brightness(0.8)' },
+                    { filter: 'grayscale(60%) contrast(110%) brightness(0.9)', opacity: 0.6 },
                     {
                         filter: 'grayscale(0%) contrast(100%) brightness(1)',
+                        opacity: 1,
                         duration: 2,
                         scrollTrigger: {
                             trigger: profile,
@@ -51,9 +52,10 @@ export default function OnsTeam() {
 
             // Hero Group Image Animation
             gsap.fromTo('.hero-group-img',
-                { filter: 'grayscale(100%) contrast(125%) brightness(0.8)' },
+                { filter: 'grayscale(60%) contrast(110%) brightness(0.9)', opacity: 0.5 },
                 {
                     filter: 'grayscale(0%) contrast(100%) brightness(1)',
+                    opacity: 1,
                     duration: 2,
                     scrollTrigger: {
                         trigger: '.hero-group-section',
@@ -185,7 +187,7 @@ export default function OnsTeam() {
                     <span className="w-2 h-2 rounded-full bg-brutal-red animate-pulse"></span>
                     ONS TEAM IN BEELD
                 </div>
-                <img src="/Images/Hero_over_ons.webp" alt="Het volledige team van Op Dreef Service poseert glimlachend in de ruime motorwerkplaats in Zonnemaire, omringd door diverse motoren en scooters." className="hero-group-img w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-700 object-center" />
+                <img src="/Images/Hero_over_ons.webp" alt="Het volledige team van Op Dreef Service poseert glimlachend in de ruime motorwerkplaats in Zonnemaire, omringd door diverse motoren en scooters." className="hero-group-img w-full h-full object-cover object-center" />
                 <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,#fff_2px,#fff_4px)] opacity-[0.03] pointer-events-none"></div>
             </section>
 
@@ -208,7 +210,7 @@ export default function OnsTeam() {
                                     <img
                                         src={member.image}
                                         alt={member.alt || `${member.name} Portrait`}
-                                        className={`profile-img w-full h-[500px] lg:h-[600px] object-cover ${member.imagePosition || 'object-center'} mix-blend-multiply rounded-[1.5rem] opacity-80 hover:opacity-100 transition-opacity duration-700 cursor-pointer`}
+                                        className={`profile-img w-full h-[500px] lg:h-[600px] object-cover ${member.imagePosition || 'object-center'} mix-blend-multiply rounded-[1.5rem] cursor-pointer`}
                                     />
                                     <div className="absolute bottom-6 left-6 bg-brutal-red text-white py-1 px-3 text-xs md:text-sm font-bold uppercase tracking-wider border-2 border-black rotate-[-2deg]">
                                         Rol: {member.role.substring(0, 30)}
