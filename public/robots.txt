@@ -1,0 +1,5 @@
+# Op Dreef Motoren – Robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://opdreefmotoren.nl/sitemap.xml

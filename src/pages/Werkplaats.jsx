@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronRight, ArrowUpRight } from 'lucide-react';
@@ -90,18 +91,26 @@ export default function Werkplaats() {
     }, []);
 
     const galleryImages = [
-        "/Images/Werkplaats_1.webp",
-        "/Images/Werkplaats_2.webp",
-        "/Images/Werkplaats_3.webp",
-        "/Images/Werkplaats_4.webp",
-        "/Images/Licht.webp",
-        "/Images/Werkplaats_6.webp",
-        "/Images/Werkplaats_7.webp",
-        "/Images/Werkplaats_9.webp"
+        { src: "/Images/Werkplaats_1.webp", alt: "Overzicht van de professioneel ingerichte werkplaats van Op Dreef Motoren" },
+        { src: "/Images/Werkplaats_2.webp", alt: "Heftafels en gereedschapswand in de werkplaats" },
+        { src: "/Images/Werkplaats_3.webp", alt: "Motor op de heftafel klaar voor onderhoud" },
+        { src: "/Images/Werkplaats_4.webp", alt: "Gedetailleerd gereedschap voor motoronderhoud" },
+        { src: "/Images/Licht.webp", alt: "Moderne hexagonale LED-verlichting in de werkplaats" },
+        { src: "/Images/Werkplaats_6.webp", alt: "Werkhoek met professionele diagnoseapparatuur" },
+        { src: "/Images/Werkplaats_7.webp", alt: "Netjes georganiseerde opslag van onderdelen en materialen" },
+        { src: "/Images/Werkplaats_9.webp", alt: "Ruime werkruimte voor meerdere voertuigen tegelijk" }
     ];
 
     return (
         <div className="w-full bg-brutal-paper selection:bg-brutal-red selection:text-brutal-paper pb-20">
+            <Helmet>
+                <title>Werkplaats | Op Dreef Motoren – Onze Ruimte & Faciliteiten</title>
+                <meta name="description" content="Bekijk de werkplaats van Op Dreef Motoren in Zonnemaire. Professionele apparatuur, speelhoek voor kinderen en een warm welkom met koffie." />
+                <link rel="canonical" href="https://opdreefmotoren.nl/werkplaats" />
+                <meta property="og:title" content="Werkplaats | Op Dreef Motoren" />
+                <meta property="og:description" content="Onze professioneel ingerichte werkplaats in Zonnemaire – met speelhoek en koffie." />
+                <meta property="og:url" content="https://opdreefmotoren.nl/werkplaats" />
+            </Helmet>
             {/* HERO SECTION */}
             <section ref={heroRef} className="relative pt-32 pb-24 px-6 border-b-4 border-brutal-black bg-brutal-offwhite overflow-hidden">
                 <div className="hero-overlay absolute top-0 left-0 w-full h-full bg-brutal-black z-10"></div>
@@ -144,7 +153,7 @@ export default function Werkplaats() {
                             className="flex gap-8 overflow-x-auto pb-12 pt-4 px-4 no-scrollbar cursor-grab active:cursor-grabbing snap-x snap-mandatory"
                             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                            {galleryImages.map((src, index) => {
+                            {galleryImages.map((image, index) => {
                                 // Subtle random rotations for that hand-placed neobrutalist look
                                 const rotations = ['-rotate-1', 'rotate-1', '-rotate-2', 'rotate-2', 'rotate-0'];
                                 const rotation = rotations[index % rotations.length];
@@ -158,8 +167,8 @@ export default function Werkplaats() {
                                             [ {String(index + 1).padStart(2, '0')} ]
                                         </div>
                                         <img
-                                            src={src}
-                                            alt={`Werkplaats detail ${index + 1}`}
+                                            src={image.src}
+                                            alt={image.alt}
                                             className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700"
                                             loading="lazy"
                                         />
@@ -245,7 +254,7 @@ export default function Werkplaats() {
                         text="Kom snel langs."
                     />
                     <p className="font-mono text-xl max-w-2xl mx-auto mb-16 text-brutal-black font-bold tracking-tight">
-                        De koffie staat klaar, de deuren staan open en onze gedreven monteurs kunnen niet wachten om weer te starten aan een nieuwe dag.
+                        De koffie staat klaar, de deuren staan open en onze gedreven monteurs kunnen niet wachten om aan een nieuwe dag te beginnen.
                     </p>
                     <MagneticButton className="text-xl md:text-2xl py-6 px-12 !bg-brutal-red !text-white !border-2 !border-brutal-red hover:!bg-transparent hover:!text-brutal-red w-full md:w-auto uppercase font-bold tracking-wider transition-colors hover:!border-brutal-red text-center flex justify-center shadow-[4px_4px_0_rgba(0,0,0,1)] active:translate-y-[2px] active:shadow-none cursor-pointer group">
                         <Link to="/contact" className="w-full h-full flex items-center justify-center">

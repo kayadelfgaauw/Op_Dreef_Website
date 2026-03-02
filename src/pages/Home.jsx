@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronRight, ArrowUpRight, Wrench, Clock, Truck, UserCheck } from 'lucide-react';
@@ -111,6 +112,14 @@ export default function Home() {
 
     return (
         <div ref={heroRef} className="w-full">
+            <Helmet>
+                <title>Op Dreef Motoren | Motor, Scooter & Brommer Service in Zonnemaire</title>
+                <meta name="description" content="Op Dreef Motoren in Zonnemaire – hét adres voor onderhoud, reparatie en service van je motor, scooter of brommer op Schouwen-Duiveland. Flexibel, vakkundig en persoonlijk." />
+                <link rel="canonical" href="https://opdreefmotoren.nl/" />
+                <meta property="og:title" content="Op Dreef Motoren | Motor, Scooter & Brommer Service" />
+                <meta property="og:description" content="Hét adres voor onderhoud, reparatie en service van je motor, scooter of brommer op Schouwen-Duiveland." />
+                <meta property="og:url" content="https://opdreefmotoren.nl/" />
+            </Helmet>
             {/* HERO SECTION */}
             <section className="relative min-h-[90vh] flex flex-col justify-end px-6 pb-20 pt-32 overflow-hidden border-b-4 border-brutal-black">
                 {/* Absolute Background Image with Overlay */}
@@ -118,6 +127,7 @@ export default function Home() {
                     <img
                         src="https://images.unsplash.com/photo-1558981420-c532902e58b4?auto=format&fit=crop&q=80&w=2500"
                         alt="Motorcycle engine detail, stark industrial lighting"
+                        fetchpriority="high"
                         className="hero-bg-img w-full h-full object-cover object-right md:object-[85%_center]"
                     />
                     <div className="absolute inset-0 bg-brutal-black/40"></div>
@@ -181,7 +191,8 @@ export default function Home() {
                             <img
                                 src="/Images/Introductie.webp"
                                 alt="Het team van Op Dreef Service aan het werk in een modern verlichte werkplaats in Zonnemaire, waarbij meerdere monteurs gelijktijdig onderhoud plegen aan verschillende motoren op heftafels."
-                                className="intro-image w-full h-[500px] lg:h-[600px] object-cover object-center mix-blend-multiply rounded-[1.5rem]"
+                                loading="lazy"
+                                className="intro-image w-full h-[500px] lg:h-[600px] object-cover object-[70%_center] mix-blend-multiply rounded-[1.5rem]"
                             />
                         </div>
                     </div>
@@ -231,7 +242,7 @@ export default function Home() {
                         <span className="text-transparent" style={{ WebkitTextStroke: '2px #F5F3EE' }}>Klant</span>ervaringen
                     </h2>
                     <a
-                        href="https://www.google.com/search?sca_esv=813765718ccf2407&tbm=lcl&sxsrf=AE3TifPbfmW02APMthL_OP1rLMaTxsMj3A:1749546521970&q=Op+Dreef+Motoren+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNLYwMzU2tjS2NDO2MDY3MjEwMtjAyPiKUcK_QMGlKDU1TcE3vyS_KDVPISi1LDO1vHgRK04pAO6Lce9RAAAA&rldimm=13865339396383724020&hl=nl-NL&sa=X&ved=2ahUKEwjB6dbXwOaNAxUc_7sIHWGzClkQ9fQKegQINBAF&biw=1470&bih=797&dpr=2#lkt=LocalPoiReviews"
+                        href="https://www.google.com/search?sca_esv=5977621399439e78&sxsrf=ANbL-n61DqQvDv6VEi1W4tKRbmR_R2Zy-A:1772490773814&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOTNlg9V24UStRRFEtR3jrnCPdQ80WvGr5M8impwWIW2JHtMigfq5EXKRustP9s1y6ssOSmD2wN-s2AvC6lWtaVRmK-XCP4TaLj7ES_PolzBEJgOung%3D%3D&q=Op+Dreef+Motoren+Reviews&sa=X&ved=2ahUKEwikkMPXooKTAxWw0AIHHdPaMWUQ0bkNegQIIhAH&biw=1470&bih=815&dpr=2"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 font-mono text-sm text-brutal-paper/50 hover:text-brutal-red mt-4 transition-colors duration-300 group"

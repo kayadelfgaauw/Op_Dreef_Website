@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import NoiseOverlay from './NoiseOverlay';
 
 export default function Layout() {
@@ -17,10 +18,52 @@ export default function Layout() {
 
     return (
         <div className="min-h-screen flex flex-col relative selection:bg-brutal-red selection:text-brutal-paper">
+            <Helmet>
+                <script type="application/ld+json">{JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "LocalBusiness",
+                    "@id": "https://opdreefmotoren.nl",
+                    "name": "Op Dreef Motoren",
+                    "description": "Hét adres voor onderhoud, reparatie en service van je motor, scooter of brommer op Schouwen-Duiveland.",
+                    "url": "https://opdreefmotoren.nl",
+                    "telephone": "+31613989857",
+                    "email": "contact@opdreefmotoren.nl",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Dijk van Bommenede 74",
+                        "addressLocality": "Zonnemaire",
+                        "postalCode": "4316 AT",
+                        "addressRegion": "Zeeland",
+                        "addressCountry": "NL"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 51.7194,
+                        "longitude": 3.8489
+                    },
+                    "logo": "https://opdreefmotoren.nl/Logo/Logo.png",
+                    "image": "https://opdreefmotoren.nl/Logo/Logo.png",
+                    "priceRange": "€€",
+                    "openingHoursSpecification": [
+                        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"], "opens": "09:00", "closes": "17:00" },
+                        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "11:00", "closes": "17:00" },
+                        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "19:00", "closes": "21:00" },
+                        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "11:00", "closes": "17:00" }
+                    ],
+                    "sameAs": [
+                        "https://www.instagram.com/opdreef_motoren/",
+                        "https://www.facebook.com/BrainYourBody"
+                    ],
+                    "areaServed": {
+                        "@type": "Place",
+                        "name": "Schouwen-Duiveland"
+                    }
+                })}</script>
+            </Helmet>
             <NoiseOverlay />
 
             {/* Navigation */}
-            <nav className="fixed top-0 left-0 w-full z-50 bg-brutal-offwhite border-b-4 border-brutal-black px-6 py-4 flex justify-between items-center">
+            <nav aria-label="Hoofdnavigatie" className="fixed top-0 left-0 w-full z-50 bg-brutal-offwhite border-b-4 border-brutal-black px-6 py-4 flex justify-between items-center">
                 <div className="flex items-center gap-2 font-grotesk font-bold text-2xl uppercase tracking-tighter relative z-50">
                     <NavLink to="/">
                         <img src="/Logo/Logo.png" alt="Op Dreef Motoren Logo" className="h-14 w-auto hover:scale-105 transition-transform duration-200" />
@@ -72,7 +115,7 @@ export default function Layout() {
             </main>
 
             {/* Footer */}
-            <footer className="bg-brutal-black text-brutal-paper border-t-8 border-brutal-red py-12 px-6">
+            <footer role="contentinfo" className="bg-brutal-black text-brutal-paper border-t-8 border-brutal-red py-12 px-6">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 font-mono text-sm">
                     <div>
                         <div className="flex items-center gap-2 font-grotesk font-bold text-2xl uppercase tracking-tighter mb-6 text-brutal-offwhite">

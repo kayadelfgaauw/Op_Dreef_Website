@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
@@ -91,18 +92,15 @@ export default function OnsTeam() {
         return () => ctx.revert();
     }, []);
 
-    // Background patterns per section — each member gets a unique shape
+    // Background patterns per section — alternating dots (Sjoerd) and diagonal lines (Niek)
+    const dotPattern = 'bg-[radial-gradient(#111_1.5px,transparent_1.5px)] [background-size:28px_28px]';
+    const linePattern = 'bg-[repeating-linear-gradient(-45deg,#111_0,#111_1px,transparent_1px,transparent_16px)] [background-size:22px_22px]';
     const sectionPatterns = [
-        // Sjoerd: dots (radial gradient)
-        'bg-[radial-gradient(#111_1.5px,transparent_1.5px)] [background-size:28px_28px]',
-        // Sun: diagonal lines (45deg)
-        'bg-[repeating-linear-gradient(45deg,#111_0,#111_1px,transparent_1px,transparent_16px)] [background-size:22px_22px]',
-        // Tycho: crosses (+)
-        'bg-[linear-gradient(#111_1px,transparent_1px),linear-gradient(90deg,#111_1px,transparent_1px)] [background-size:28px_28px]',
-        // Cees: small squares
-        'bg-[linear-gradient(#111_2px,transparent_2px),linear-gradient(90deg,#111_2px,transparent_2px)] [background-size:20px_20px] [background-position:center_center]',
-        // Niek: diagonal lines (opposite direction, -45deg)
-        'bg-[repeating-linear-gradient(-45deg,#111_0,#111_1px,transparent_1px,transparent_16px)] [background-size:22px_22px]',
+        dotPattern,   // Sjoerd: dots
+        linePattern,  // Sun: lines
+        dotPattern,   // Tycho: dots
+        linePattern,  // Cees: lines
+        dotPattern,   // Niek: dots
     ];
 
     const team = [
@@ -128,7 +126,7 @@ export default function OnsTeam() {
             alt: "Sun staat achter de houten balie van de ontvangstruimte bij Op Dreef Service, met op de voorgrond diverse Motul onderhoudsproducten en cadeaubonnen.",
             fileId: "55819022",
             text: [
-                "Ik ben de vrouw van Sjoerd. Als je man dag en nacht met motoren bezig is, kun je maar beter meedoen, en dat doe ik uiteraard met plezier.",
+                "Als je man dag en nacht met motoren bezig is, kun je maar beter meedoen, en dat doe ik uiteraard met plezier.",
                 "Geen zorgen, het sleutelen laat ik aan de mannen over.",
                 "Ik focus me op waar ik goed in ben: het klantcontact, de financiën en alles daartussenin. Zo zorgen we samen voor kwaliteit, service én een warm welkom."
             ],
@@ -180,12 +178,20 @@ export default function OnsTeam() {
             color: "border-brutal-red",
             textColor: "text-brutal-red",
             align: "right",
-            imagePosition: "object-[center_85%]"
+            imagePosition: "object-[center_25%]"
         }
     ];
 
     return (
         <div ref={containerRef} className="w-full bg-brutal-offwhite print:bg-white text-brutal-black font-mono">
+            <Helmet>
+                <title>Ons Team | Op Dreef Motoren – Maak Kennis met Ons</title>
+                <meta name="description" content="Maak kennis met het team van Op Dreef Motoren in Zonnemaire. Een familiebedrijf waar passie voor techniek en persoonlijke service centraal staan." />
+                <link rel="canonical" href="https://opdreefmotoren.nl/ons-team" />
+                <meta property="og:title" content="Ons Team | Op Dreef Motoren" />
+                <meta property="og:description" content="Maak kennis met het team van Op Dreef Motoren – passie voor techniek én mensen." />
+                <meta property="og:url" content="https://opdreefmotoren.nl/ons-team" />
+            </Helmet>
             {/* INVISIBLE HALO SVG FOR FILTERS */}
             <svg width="0" height="0" className="absolute -z-10">
                 <defs>
@@ -202,10 +208,10 @@ export default function OnsTeam() {
                 <img
                     src="/Images/Hero_over_ons.webp"
                     alt="Het volledige team van Op Dreef Service poseert glimlachend in de ruime motorwerkplaats in Zonnemaire, omringd door diverse motoren en scooters."
-                    className="hero-group-img w-full h-full object-cover object-[center_80%] scale-110"
+                    className="hero-group-img w-full h-full object-cover object-[center_80%] scale-125"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-                <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,#fff_2px,#fff_4px)] opacity-[0.03] pointer-events-none"></div>
+
 
                 {/* Title overlaid at bottom of photo on mobile */}
                 <h1 className="absolute bottom-4 left-6 font-grotesk font-black text-7xl uppercase tracking-tighter leading-[0.85] text-white hero-text-block drop-shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
@@ -236,7 +242,7 @@ export default function OnsTeam() {
                     className="hero-group-img absolute inset-0 w-full h-full object-cover object-[center_60%]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30 pointer-events-none"></div>
-                <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,#fff_2px,#fff_4px)] opacity-[0.03] pointer-events-none"></div>
+
 
 
                 <div className="relative z-10 w-full px-6 pb-16 pt-40 flex flex-row justify-between items-end gap-12">

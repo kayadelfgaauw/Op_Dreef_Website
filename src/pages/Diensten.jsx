@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MagneticButton from '../components/MagneticButton';
@@ -19,9 +20,9 @@ const services = [
     { id: "SV-09", icon: Beaker, title: "Roestherstel en spuitwerk", desc: "Zit er roest op je frame of wil je een frisse, nieuwe laklaag? Wij herstellen schade en zorgen voor strak spuitwerk, zodat je voertuig er weer als nieuw uitziet.", img: "/images/61-IMG_2871.webp" },
     { id: "SV-10", icon: ShieldAlert, title: "Diagnose en storingsoplossing", desc: "Onverklaarbaar probleem of storing? We sporen de oorzaak op met professionele diagnoseapparatuur en lossen het vakkundig voor je op.", img: "/images/12-IMG_2606.webp" },
     { id: "SV-11", icon: Package, title: "Onderdelen", desc: "Voor de doe-het-zelver verkopen wij ook onderdelen en andere benodigdheden.", img: "/images/41-IMG_2700.webp" },
-    { id: "SV-12", icon: MapPin, title: "Afleveren aan huis", desc: "Indien gewenst wordt je voertuig weer bij je thuis afgeleverd zodra het klaar is.", img: "/images/3-IMG_2554.webp" },
-    { id: "SV-13", icon: ArrowLeftRight, title: "In- en verkoop", desc: "Op zoek naar een motor, scooter of brommer? Of wil je jouw tweewieler verkopen? Wij kopen en verkopen diverse gemotoriseerde tweewielers. Kom gerust langs voor het actuele aanbod.", img: "/images/41-IMG_2700.webp" },
-    { id: "SV-14", icon: Container, title: "Motor aanhanger huren", desc: "Moet je je tweewieler(s) vervoeren? Huur onze speciale motoraanhanger, geschikt voor het veilig transporteren van twee motorvoertuigen tegelijk.", img: "/images/41-IMG_2700.webp" }
+    { id: "SV-13", icon: ArrowLeftRight, title: "In- en verkoop", desc: "Op zoek naar een motor, scooter of brommer? Of wil je jouw voertuig verkopen? Hiervoor kun je bij ons terecht. Kom gerust langs of bel voor ons actuele aanbod.", img: "/images/41-IMG_2700.webp" },
+    { id: "SV-14", icon: Container, title: "Motoraanhanger huren", desc: "Wil je jouw tweewieler(s) veilig vervoeren? Huur onze speciale motoraanhanger, geschikt voor 2 voertuigen tegelijk.", img: "/images/41-IMG_2700.webp" },
+    { id: "SV-12", icon: MapPin, title: "Afleveren aan huis", desc: "Indien gewenst wordt je voertuig weer bij je thuis afgeleverd zodra het klaar is.", img: "/images/3-IMG_2554.webp" }
 ];
 
 export default function Diensten() {
@@ -78,6 +79,14 @@ export default function Diensten() {
 
     return (
         <div ref={containerRef} className="w-full bg-brutal-paper min-h-screen pb-40">
+            <Helmet>
+                <title>Diensten | Op Dreef Motoren – Onderhoud, Reparatie & Meer</title>
+                <meta name="description" content="Bekijk alle diensten van Op Dreef Motoren: onderhoud, reparatie, bandenservice, ophaalservice, customized projecten en meer voor je motor, scooter of brommer." />
+                <link rel="canonical" href="https://opdreefmotoren.nl/diensten" />
+                <meta property="og:title" content="Diensten | Op Dreef Motoren" />
+                <meta property="og:description" content="Alle diensten voor je motor, scooter of brommer: van kleine beurt tot customized projecten." />
+                <meta property="og:url" content="https://opdreefmotoren.nl/diensten" />
+            </Helmet>
 
             {/* HEADER: Index Card Flip Mechanism */}
             <section className="pt-32 px-6 mb-20 overflow-hidden relative">
@@ -103,7 +112,7 @@ export default function Diensten() {
                         <div className="absolute top-4 right-4 font-mono text-xs opacity-50 uppercase tracking-widest">
                             OVERZICHT DIENSTEN
                         </div>
-                        <h1 className="font-grotesk font-black text-5xl md:text-7xl uppercase mb-8 text-brutal-offwhite tracking-tighter shadow-sm">
+                        <h1 className="font-grotesk font-black text-5xl md:text-7xl uppercase mb-8 text-brutal-offwhite tracking-tighter shadow-sm" style={{ hyphens: 'none', wordBreak: 'normal' }}>
                             Alles onder <br /><span className="text-brutal-red">één dak.</span>
                         </h1>
                         <div className="font-mono text-lg md:text-xl max-w-xl leading-relaxed mb-12">

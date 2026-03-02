@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import gsap from 'gsap';
 import MagneticButton from '../components/MagneticButton';
 import { Phone, Mail, MessageCircle } from 'lucide-react';
@@ -54,6 +55,14 @@ export default function Contact() {
 
     return (
         <div ref={containerRef} className="w-full bg-brutal-paper min-h-screen pt-32 pb-40 px-6 uppercase font-mono text-brutal-black">
+            <Helmet>
+                <title>Contact | Op Dreef Motoren – Maak een Afspraak</title>
+                <meta name="description" content="Neem contact op met Op Dreef Motoren in Zonnemaire. Bel, WhatsApp of mail ons voor een afspraak. Openingstijden ma-za, ook in de avonduren." />
+                <link rel="canonical" href="https://opdreefmotoren.nl/contact" />
+                <meta property="og:title" content="Contact | Op Dreef Motoren" />
+                <meta property="og:description" content="Neem contact op voor onderhoud of reparatie van je motor, scooter of brommer in Zonnemaire." />
+                <meta property="og:url" content="https://opdreefmotoren.nl/contact" />
+            </Helmet>
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 relative">
 
                 {/* LEFT COLUMN: Data & Hours */}
@@ -104,7 +113,7 @@ export default function Contact() {
                         </div>
 
                         <div className="p-4 bg-brutal-offwhite text-xs border-t-2 border-brutal-black leading-relaxed opacity-70 border-l-4 border-l-brutal-red">
-                            <span className="font-bold text-brutal-red">LET OP:</span> Het kan voorkomen dat wij tijdens openingstijden kort afwezig zijn i.v.m. de pick-up service of testritten. Bel gerust om te checken voordat u langs wilt komen.
+                            <span className="font-bold text-brutal-red">LET OP:</span> Het kan voorkomen dat wij tijdens openingstijden kort afwezig zijn i.v.m. de pick-up service of testritten. Bel ons gerust voordat u langs wilt komen.
                         </div>
                     </div>
                 </div>
