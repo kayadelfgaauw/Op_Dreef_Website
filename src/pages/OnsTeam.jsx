@@ -108,7 +108,7 @@ export default function OnsTeam() {
             name: "Sjoerd",
             role: "Hoofdmonteur en Eigenaar",
             image: "/Images/Sjoerd.webp",
-            alt: "Sjoerd zit ontspannen naast een glimmende oranje Harley-Davidson op de heftafel, klaar voor onderhoud of reparatie in de werkplaats.",
+            alt: "Eigenaar Sjoerd zittend naast een glimmende oranje Harley-Davidson motorfiets op de heftafel.",
             fileId: "87091623",
             text: [
                 "Motors, scooters en brommers, ik vond ze al geweldig voordat ik wist hoe je \u201Cbougie\u201D uitspreekt.",
@@ -123,7 +123,7 @@ export default function OnsTeam() {
             name: "Sun",
             role: "Planning & Financiën",
             image: "/Images/Sun.webp",
-            alt: "Sun staat achter de houten balie van de ontvangstruimte bij Op Dreef Service, met op de voorgrond diverse Motul onderhoudsproducten en cadeaubonnen.",
+            alt: "Sun glimlachend aan de balie terwijl ze aan het bellen is, met motorolie en cadeaubonnen op de voorgrond.",
             fileId: "55819022",
             text: [
                 "Als je man dag en nacht met motoren bezig is, kun je maar beter meedoen, en dat doe ik uiteraard met plezier.",
@@ -138,7 +138,7 @@ export default function OnsTeam() {
             name: "Tycho",
             role: "Assistent Monteur",
             image: "/Images/Tycho.webp",
-            alt: "Tycho opent een gereedschapslade in de strak georganiseerde zwarte kastenwand van de werkplaats onder moderne hexagonale LED-verlichting.",
+            alt: "Monteur Tycho lachend bij een professionele zwarte gereedschapskast in de modern verlichte werkplaats.",
             fileId: "64921004",
             text: [
                 "Als student Engineering en schoonbroer van Sjoerd rolde ik al snel de werkplaats in.",
@@ -153,7 +153,7 @@ export default function OnsTeam() {
             name: "Cees",
             role: "Elektrospecialist",
             image: "/Images/Cees.webp",
-            alt: "Cees van Op Dreef Service werkt met een glimlach aan een klassieke Honda motorfiets in een modern uitgeruste werkplaats met professioneel gereedschap.",
+            alt: "Elektro specialist Cees lachend aan het werk aan een vintage motorfiets in de werkplaats van Op Dreef.",
             fileId: "22019844",
             text: [
                 "Met tientallen jaren ervaring als technisch specialist ondersteun ik, als opa van Sjoerd, het team van Op Dreef bij de complexere klussen.",
@@ -168,7 +168,7 @@ export default function OnsTeam() {
             name: "Niek",
             role: "Assistent Monteur",
             image: "/Images/Niek.webp",
-            alt: "Niek poseert bij een Aprilia bromfiets en diverse scooters in de showroom van Op Dreef Service op Schouwen-Duiveland.",
+            alt: "Monteur Niek poserend bij een rij scooters en een Aprilia schakelbrommer in de showroom.",
             fileId: "38920194",
             text: [
                 "Scooters en brommers hebben mij altijd al getrokken. Aanpakken, netjes werken en oog voor detail vind ik belangrijk in alles wat ik doe.",
@@ -207,7 +207,7 @@ export default function OnsTeam() {
             <div className="md:hidden hero-group-section relative h-[55vh] border-b-4 border-brutal-black overflow-hidden">
                 <img
                     src="/Images/Hero_over_ons.webp"
-                    alt="Het volledige team van Op Dreef Service poseert glimlachend in de ruime motorwerkplaats in Zonnemaire, omringd door diverse motoren en scooters."
+                    alt="Het volledige team van Op Dreef Service poserend in de werkplaats tussen de motoren en scooters."
                     className="hero-group-img w-full h-full object-cover object-[center_80%] scale-125"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
@@ -238,7 +238,7 @@ export default function OnsTeam() {
             <section className="hero-group-section hidden md:flex relative min-h-[90vh] border-b-8 border-brutal-black overflow-hidden items-end">
                 <img
                     src="/Images/Hero_over_ons.webp"
-                    alt="Het volledige team van Op Dreef Service poseert glimlachend in de ruime motorwerkplaats in Zonnemaire, omringd door diverse motoren en scooters."
+                    alt="Het volledige team van Op Dreef Service poserend in de werkplaats tussen de motoren en scooters."
                     className="hero-group-img absolute inset-0 w-full h-full object-cover object-[center_60%]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30 pointer-events-none"></div>

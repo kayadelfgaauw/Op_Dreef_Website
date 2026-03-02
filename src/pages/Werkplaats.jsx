@@ -91,14 +91,14 @@ export default function Werkplaats() {
     }, []);
 
     const galleryImages = [
-        { src: "/Images/Werkplaats_1.webp", alt: "Overzicht van de professioneel ingerichte werkplaats van Op Dreef Motoren" },
-        { src: "/Images/Werkplaats_2.webp", alt: "Heftafels en gereedschapswand in de werkplaats" },
-        { src: "/Images/Werkplaats_3.webp", alt: "Motor op de heftafel klaar voor onderhoud" },
-        { src: "/Images/Werkplaats_4.webp", alt: "Gedetailleerd gereedschap voor motoronderhoud" },
+        { src: "/Images/Werkplaats_1.webp", alt: "Eigenaar Sjoerd aan het werk aan een motorfiets in de werkplaats van Op Dreef Service." },
+        { src: "/Images/Werkplaats_2.webp", alt: "Het aanzicht van het bedrijfspand van Op Dreef Motoren met verschillende scooters en motoren voor de geopende garagedeur." },
+        { src: "/Images/Werkplaats_3.webp", alt: "Een ervaren monteur voert gedetailleerd technisch onderhoud uit aan de elektronica van een klassieke motor." },
+        { src: "/Images/Werkplaats_4.webp", alt: "Overzicht van de ruime werkplaats en showroom met een diverse collectie motoren en scooters, waaronder een custom chopper." },
         { src: "/Images/Licht.webp", alt: "Moderne hexagonale LED-verlichting in de werkplaats" },
-        { src: "/Images/Werkplaats_6.webp", alt: "Werkhoek met professionele diagnoseapparatuur" },
-        { src: "/Images/Werkplaats_7.webp", alt: "Netjes georganiseerde opslag van onderdelen en materialen" },
-        { src: "/Images/Werkplaats_9.webp", alt: "Ruime werkruimte voor meerdere voertuigen tegelijk" }
+        { src: "/Images/Werkplaats_6.webp", alt: "Eigenaar Sjoerd en een collega lachend poserend in de modern verlichte werkplaats, omringd door vintage oliebordjes." },
+        { src: "/Images/Werkplaats_7.webp", alt: "Een monteur selecteert het juiste gereedschap uit een professioneel zwarte wandmeubel in de opgeruimde werkplaats." },
+        { src: "/Images/Werkplaats_9.webp", alt: "Close-up van het Op Dreef Service logo en de RDW-erkenning op de bakstenen gevel van het pand." }
     ];
 
     return (
