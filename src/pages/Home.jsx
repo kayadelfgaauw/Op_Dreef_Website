@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ChevronRight, ArrowUpRight } from 'lucide-react';
+import { ChevronRight, ArrowUpRight, Wrench, Clock, Truck, UserCheck } from 'lucide-react';
 import SplitTextReveal from '../components/SplitTextReveal';
 import MagneticButton from '../components/MagneticButton';
 import { Link } from 'react-router-dom';
@@ -45,12 +45,11 @@ export default function Home() {
             );
 
             gsap.fromTo('.intro-image',
-                { scale: 1.15, filter: 'grayscale(60%) contrast(110%) brightness(0.9)' },
+                { filter: 'grayscale(60%) contrast(110%) brightness(0.9)', opacity: 0.6 },
                 {
-                    scale: 1,
                     filter: 'grayscale(0%) contrast(100%) brightness(1)',
+                    opacity: 1,
                     duration: 2,
-                    ease: "power2.out",
                     scrollTrigger: {
                         trigger: overOnsRef.current,
                         start: "top 65%",
@@ -75,7 +74,7 @@ export default function Home() {
             gsap.to('.ticker-track', {
                 xPercent: -50,
                 ease: "none",
-                duration: 25,
+                duration: 12,
                 repeat: -1
             });
 
@@ -85,7 +84,7 @@ export default function Home() {
                 {
                     xPercent: 0,
                     ease: "none",
-                    duration: 35,
+                    duration: 16,
                     repeat: -1
                 }
             );
@@ -94,7 +93,7 @@ export default function Home() {
             gsap.to('.ticker-track-fast', {
                 xPercent: -50,
                 ease: "none",
-                duration: 18,
+                duration: 8,
                 repeat: -1
             });
 
@@ -119,7 +118,7 @@ export default function Home() {
                     <img
                         src="https://images.unsplash.com/photo-1558981420-c532902e58b4?auto=format&fit=crop&q=80&w=2500"
                         alt="Motorcycle engine detail, stark industrial lighting"
-                        className="hero-bg-img w-full h-full object-cover"
+                        className="hero-bg-img w-full h-full object-cover object-right md:object-[85%_center]"
                     />
                     <div className="absolute inset-0 bg-brutal-black/40"></div>
                     {/* Boot sequence curtain */}
@@ -127,7 +126,7 @@ export default function Home() {
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto w-full">
-                    <h1 className="hero-headline font-grotesk font-black text-6xl md:text-8xl lg:text-9xl uppercase tracking-tighter text-brutal-offwhite leading-[0.85] mb-8 mix-blend-difference">
+                    <h1 className="hero-headline font-grotesk font-black text-[2.75rem] md:text-8xl lg:text-9xl uppercase tracking-tighter text-brutal-offwhite leading-[0.85] mb-8 mix-blend-difference">
                         Wij sleutelen,<br />
                         <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '2px #F5F3EE' }}>jij blijft</span><br />
                         op dreef.
@@ -176,12 +175,15 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="intro-image-container relative min-h-[500px] w-full border-4 border-brutal-black overflow-hidden bg-brutal-black rounded-[2rem]">
-                        <img
-                            src="/Images/Introductie.webp"
-                            alt="Het team van Op Dreef Service aan het werk in een modern verlichte werkplaats in Zonnemaire, waarbij meerdere monteurs gelijktijdig onderhoud plegen aan verschillende motoren op heftafels."
-                            className="intro-image w-full h-full object-cover origin-center"
-                        />
+                    <div className="intro-image-container relative w-full group perspective-1000">
+                        <div className="relative border-4 border-brutal-black p-4 bg-white rounded-[2rem] transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:translate-x-2 z-10 w-full">
+                            <div className="absolute inset-0 border-4 border-brutal-black rounded-[2rem] -translate-x-4 translate-y-4 -z-10 bg-black mix-blend-overlay"></div>
+                            <img
+                                src="/Images/Introductie.webp"
+                                alt="Het team van Op Dreef Service aan het werk in een modern verlichte werkplaats in Zonnemaire, waarbij meerdere monteurs gelijktijdig onderhoud plegen aan verschillende motoren op heftafels."
+                                className="intro-image w-full h-[500px] lg:h-[600px] object-cover object-center mix-blend-multiply rounded-[1.5rem]"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -190,23 +192,21 @@ export default function Home() {
             <section ref={uspRef} className="bg-brutal-offwhite border-b-4 border-brutal-black">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y-4 md:divide-y-0 lg:divide-x-4 divide-brutal-black border-brutal-black border-t-0">
                     {[
-                        { id: "01", title: "Vakkundigheid", desc: "Jarenlange ervaring met diverse merken en typen motoren en scooters." },
-                        { id: "02", title: "Flexibiliteit", desc: "Ook in de avonduren en weekenden staan we voor je klaar met korte wachttijden." },
-                        { id: "03", title: "Ophaalservice", desc: "In heel Schouwen-Duiveland halen we je defecte voertuig kosteloos op." },
-                        { id: "04", title: "Persoonlijk", desc: "Je spreekt direct met de monteur die aan je voertuig werkt." }
+                        { icon: Wrench, title: "Vakkundigheid", desc: "Jarenlange ervaring met diverse merken en typen motors, brommers en scooters." },
+                        { icon: Clock, title: "Flexibiliteit", desc: "Ook in de avonduren en weekenden staan we voor je klaar met korte wachttijden." },
+                        { icon: Truck, title: "Ophaalservice", desc: "In heel Schouwen-Duiveland halen we je defecte voertuig kosteloos op." },
+                        { icon: UserCheck, title: "Persoonlijk", desc: "Je spreekt direct met de monteur die aan je voertuig werkt." }
                     ].map((usp, index) => (
-                        <div key={index} className="usp-card group relative p-12 min-h-[400px] flex flex-col justify-between overflow-hidden cursor-crosshair transition-colors duration-500 hover:bg-brutal-red hover:text-brutal-paper">
-                            <div className="font-mono text-6xl font-bold opacity-20 group-hover:opacity-100 transition-opacity z-10">
-                                {usp.id}
-                            </div>
-                            <div className="z-10 relative">
-                                <h3 className="font-grotesk font-black text-3xl uppercase tracking-tighter mb-4 pr-12 group-hover:text-brutal-paper">
+                        <div key={index} className="usp-card group relative p-8 py-10 flex flex-col gap-4 overflow-hidden cursor-crosshair transition-colors duration-500 hover:bg-brutal-red hover:text-brutal-paper">
+                            <div className="z-10 flex items-center gap-4">
+                                <usp.icon size={32} strokeWidth={2.5} className="shrink-0 opacity-40 group-hover:opacity-100 transition-opacity" />
+                                <h3 className="font-grotesk font-black text-2xl uppercase tracking-tighter group-hover:text-brutal-paper">
                                     {usp.title}
                                 </h3>
-                                <p className="font-mono text-sm leading-relaxed opacity-70 group-hover:opacity-100 text-brutal-black group-hover:text-brutal-paper group-hover:font-medium">
-                                    {usp.desc}
-                                </p>
                             </div>
+                            <p className="font-mono text-sm leading-relaxed opacity-70 group-hover:opacity-100 text-brutal-black group-hover:text-brutal-paper group-hover:font-medium z-10">
+                                {usp.desc}
+                            </p>
 
                             {/* Giant crosshair hover effect */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 group-hover:w-[150%] group-hover:h-[150%] transition-all duration-700 ease-out z-0 opacity-0 group-hover:opacity-10 pointer-events-none mix-blend-overlay border-[1px] border-brutal-paper rounded-full flex items-center justify-center">
@@ -221,6 +221,25 @@ export default function Home() {
             {/* TICKER TAPE REVIEWS */}
             <section ref={reviewsRef} className="py-24 flex flex-col justify-center bg-brutal-black text-brutal-paper overflow-hidden relative cursor-help">
                 <div className="absolute top-0 w-full h-8 bg-black z-10 border-b-2 border-brutal-red" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 10px, #E63B2E 10px, #E63B2E 20px)", opacity: 0.2 }}></div>
+
+                {/* Section Title */}
+                <div className="relative z-10 px-6 mb-10 max-w-7xl mx-auto w-full">
+                    <span className="font-mono text-brutal-red text-sm tracking-widest uppercase border-b-2 border-brutal-red pb-1">
+                        [ Google Reviews ]
+                    </span>
+                    <h2 className="font-grotesk font-black text-4xl md:text-7xl lg:text-8xl uppercase tracking-tighter mt-4 leading-[0.85]">
+                        <span className="text-transparent" style={{ WebkitTextStroke: '2px #F5F3EE' }}>Klant</span>ervaringen
+                    </h2>
+                    <a
+                        href="https://www.google.com/search?sca_esv=813765718ccf2407&tbm=lcl&sxsrf=AE3TifPbfmW02APMthL_OP1rLMaTxsMj3A:1749546521970&q=Op+Dreef+Motoren+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNLYwMzU2tjS2NDO2MDY3MjEwMtjAyPiKUcK_QMGlKDU1TcE3vyS_KDVPISi1LDO1vHgRK04pAO6Lce9RAAAA&rldimm=13865339396383724020&hl=nl-NL&sa=X&ved=2ahUKEwjB6dbXwOaNAxUc_7sIHWGzClkQ9fQKegQINBAF&biw=1470&bih=797&dpr=2#lkt=LocalPoiReviews"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 font-mono text-sm text-brutal-paper/50 hover:text-brutal-red mt-4 transition-colors duration-300 group"
+                    >
+                        Bekijk alle reviews
+                        <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                </div>
 
                 <div className="flex whitespace-nowrap pt-4 pb-2 ticker-track-fast font-mono text-lg uppercase tracking-widest pl-4 hover:[animation-play-state:paused] hover:text-brutal-red transition-colors opacity-40">
                     {[1, 2, 3, 4].map((n) => (

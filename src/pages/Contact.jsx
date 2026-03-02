@@ -104,7 +104,7 @@ export default function Contact() {
                         </div>
 
                         <div className="p-4 bg-brutal-offwhite text-xs border-t-2 border-brutal-black leading-relaxed opacity-70 border-l-4 border-l-brutal-red">
-                            <span className="font-bold text-brutal-red">LET OP:</span> Het kan voorkomen dat wij kort afwezig zijn i.v.m. pick-up service of testritten. Bel onverwachts gerust even om te checken.
+                            <span className="font-bold text-brutal-red">LET OP:</span> Het kan voorkomen dat wij tijdens openingstijden kort afwezig zijn i.v.m. de pick-up service of testritten. Bel gerust om te checken voordat u langs wilt komen.
                         </div>
                     </div>
                 </div>
@@ -185,7 +185,6 @@ export default function Contact() {
                                 className="submit-btn border-4 border-brutal-red border-dashed p-6 font-grotesk font-black text-2xl tracking-widest text-brutal-red hover:bg-[#25D366] hover:border-[#25D366] hover:text-white hover:border-solid transition-all mix-blend-multiply w-full relative overflow-hidden group mt-4 flex justify-between items-center"
                             >
                                 <span>VERSTUUR</span>
-                                <span className="font-mono text-sm group-hover:animate-pulse">VERZENDEN</span>
                                 {/* Visual hover scanline effect */}
                                 <div className="absolute top-0 left-0 w-full h-[2px] bg-brutal-paper opacity-0 group-hover:opacity-100 mix-blend-overlay" style={{ animation: 'scanline 2s linear infinite' }}></div>
                             </button>

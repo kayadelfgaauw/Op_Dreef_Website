@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MagneticButton from '../components/MagneticButton';
 import { Link } from 'react-router-dom';
-import { Truck, Wrench, PenTool, Search, ThermometerSnowflake, Settings, Bike, Chrome, Beaker, ShieldAlert, Car, MapPin } from 'lucide-react';
+import { Truck, Wrench, PenTool, Search, ThermometerSnowflake, Settings, Bike, Chrome, Beaker, ShieldAlert, Package, MapPin, ArrowLeftRight, Container } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,14 +12,16 @@ const services = [
     { id: "SV-02", icon: Wrench, title: "Reparaties", desc: "Van piepjes en lekkages tot vastlopers en startproblemen, bij ons kun je terecht voor alle algemene en specifieke reparaties.", img: "/images/52-IMG_2801.webp" },
     { id: "SV-03", icon: PenTool, title: "Kleine beurt", desc: "We voeren een controle en onderhoudsbeurt uit op de belangrijkste onderdelen, zodat je soepel kan blijven rijden.", img: "/images/24-IMG_2618.webp" },
     { id: "SV-04", icon: Search, title: "Grote beurt", desc: "Bij een grote beurt controleren we je voertuig van top tot teen. Alles wordt nagelopen, afgesteld en, waar nodig, vervangen.", img: "/images/32-IMG_2638.webp" },
-    { id: "SV-05", icon: ThermometerSnowflake, title: "Winterklaar maken", desc: "Wij zorgen dat je goed voorbereid het koude seizoen in kan met controle op banden, olie, accu en andere essentiële onderdelen. Zo voorkom je startproblemen en rijd je veilig de winter door.", img: "/images/11-IMG_2605.webp" },
+    { id: "SV-05", icon: ThermometerSnowflake, title: "Winterklaar maken", desc: "Wij zorgen dat je goed voorbereid het koude seizoen in kan. Zo voorkom je startproblemen en rijd je veilig de winter door.", img: "/images/11-IMG_2605.webp" },
     { id: "SV-06", icon: Settings, title: "Installeren van accessoires/opties", desc: "Van valbeugels tot een telefoonhouder of topkoffer: we installeren je accessoires netjes en veilig, zoals het hoort.", img: "/images/55-IMG_2822.webp" },
     { id: "SV-07", icon: Bike, title: "Customized projecten", desc: "Heb je een uniek idee of wil je jouw tweewieler volledig naar wens laten aanpassen? Wij denken mee en bouwen precies wat jij voor ogen hebt.", img: "/images/48-IMG_2754.webp" },
     { id: "SV-08", icon: Chrome, title: "Bandenservice", desc: "Versleten of zachte banden? We vervangen, balanceren en controleren je banden zodat je weer veilig de weg op kunt.", img: "/images/60-IMG_2845.webp" },
     { id: "SV-09", icon: Beaker, title: "Roestherstel en spuitwerk", desc: "Zit er roest op je frame of wil je een frisse, nieuwe laklaag? Wij herstellen schade en zorgen voor strak spuitwerk, zodat je voertuig er weer als nieuw uitziet.", img: "/images/61-IMG_2871.webp" },
     { id: "SV-10", icon: ShieldAlert, title: "Diagnose en storingsoplossing", desc: "Onverklaarbaar probleem of storing? We sporen de oorzaak op met professionele diagnoseapparatuur en lossen het vakkundig voor je op.", img: "/images/12-IMG_2606.webp" },
-    { id: "SV-11", icon: Car, title: "Leenvervoer", desc: "Wil je mobiel blijven terwijl je tweewieler bij ons is? Geen probleem, wij bieden passend leenvervoer aan.", img: "/images/41-IMG_2700.webp" },
-    { id: "SV-12", icon: MapPin, title: "Afleveren aan huis", desc: "Indien gewenst wordt je voertuig weer bij je thuis afgeleverd zodra het klaar is.", img: "/images/3-IMG_2554.webp" }
+    { id: "SV-11", icon: Package, title: "Onderdelen", desc: "Voor de doe-het-zelver verkopen wij ook onderdelen en andere benodigdheden.", img: "/images/41-IMG_2700.webp" },
+    { id: "SV-12", icon: MapPin, title: "Afleveren aan huis", desc: "Indien gewenst wordt je voertuig weer bij je thuis afgeleverd zodra het klaar is.", img: "/images/3-IMG_2554.webp" },
+    { id: "SV-13", icon: ArrowLeftRight, title: "In- en verkoop", desc: "Op zoek naar een motor, scooter of brommer? Of wil je jouw tweewieler verkopen? Wij kopen en verkopen diverse gemotoriseerde tweewielers. Kom gerust langs voor het actuele aanbod.", img: "/images/41-IMG_2700.webp" },
+    { id: "SV-14", icon: Container, title: "Motor aanhanger huren", desc: "Moet je je tweewieler(s) vervoeren? Huur onze speciale motoraanhanger, geschikt voor het veilig transporteren van twee motorvoertuigen tegelijk.", img: "/images/41-IMG_2700.webp" }
 ];
 
 export default function Diensten() {
@@ -89,7 +91,7 @@ export default function Diensten() {
                         <img
                             src="/Images/Diensten.webp"
                             alt="Onze Diensten"
-                            className="w-full h-[400px] lg:h-[600px] object-cover object-left border-8 border-brutal-black shadow-[15px_15px_0_#E63B2E] transition-transform duration-700 -rotate-2 hover:rotate-0"
+                            className="w-full h-[400px] lg:h-[600px] object-cover object-right border-8 border-brutal-black shadow-[15px_15px_0_#E63B2E] transition-transform duration-700 -rotate-2 hover:rotate-0"
                         />
                     </div>
 
@@ -105,7 +107,7 @@ export default function Diensten() {
                             Alles onder <br /><span className="text-brutal-red">één dak.</span>
                         </h1>
                         <div className="font-mono text-lg md:text-xl max-w-xl leading-relaxed mb-12">
-                            Bij Op Dreef Motoren ben je aan het juiste adres voor alles wat je motor, scooter of brommer nodig heeft. Van regulier onderhoud en reparaties tot maatwerkprojecten en alles daartussenin. Wij bieden <span className="font-bold text-brutal-offwhite">complete service</span> in <span className="font-bold text-brutal-offwhite">Schouwen-Duiveland en omgeving</span>. Hieronder vind je al onze diensten overzichtelijk op een rij.
+                            Bij Op Dreef Motoren ben je aan het juiste adres voor alles wat je motor, scooter of brommer nodig heeft. Van regulier onderhoud en reparaties tot maatwerkprojecten en alles daartussenin. Wij bieden <span className="font-bold text-brutal-offwhite">complete service</span> in <span className="font-bold text-brutal-offwhite">Schouwen-Duiveland en omgeving</span>.
                         </div>
 
                         <div className="flex items-center gap-4">
@@ -146,13 +148,13 @@ export default function Diensten() {
                                 <service.icon className="w-8 h-8 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform duration-300" />
                             </div>
                             <div className="col-span-12 md:col-span-6 font-grotesk font-bold text-3xl md:text-4xl uppercase tracking-tighter relative overflow-hidden group-hover:text-brutal-paper flex items-center">
-                                <span className="relative z-10 flex gap-4 items-center whitespace-nowrap">
+                                <span className="relative z-10 flex gap-4 items-center flex-wrap">
                                     <service.icon className="w-8 h-8 block md:hidden text-brutal-red" />
                                     {service.title}
                                 </span>
                                 {/* Arrow line on hover */}
                                 <div className="ml-6 flex-1 h-1 relative hidden md:block mt-1">
-                                    <div className="absolute left-0 top-1/2 -translate-y-1/2 bg-brutal-red h-1 w-0 group-hover:w-full transition-all duration-500 ease-out z-20">
+                                    <div className="absolute left-0 top-1/2 -translate-y-1/2 bg-brutal-red h-1 w-0 group-hover:w-[calc(100%-20px)] transition-all duration-500 ease-out z-20">
                                         <div className="absolute -right-1 top-1/2 -translate-y-1/2 w-4 h-4 border-t-[4px] border-r-[4px] border-brutal-red rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200"></div>
                                     </div>
                                 </div>
@@ -183,7 +185,7 @@ export default function Diensten() {
                         </h2>
 
                         <p className="font-mono text-brutal-black/80 max-w-2xl mx-auto mb-12 text-base md:text-lg leading-relaxed font-semibold">
-                            Ons ervaren team staat dagelijks voor je klaar met professionele service en vakkennis.
+                            Ons ervaren team staat dagelijks voor je klaar.
                         </p>
 
                         <Link to="/contact" className="group relative inline-flex items-center justify-center px-10 py-5 font-grotesk font-bold text-2xl uppercase tracking-wider text-brutal-paper bg-brutal-red border-4 border-brutal-black transition-all hover:-translate-y-2 hover:translate-x-[-4px] hover:shadow-[12px_12px_0_#111] active:translate-y-0 active:translate-x-0 active:shadow-none">

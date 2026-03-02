@@ -51,16 +51,16 @@ export default function Werkplaats() {
                 }
             );
 
-            // Gallery reveal
-            gsap.from('.gallery-item', {
-                y: 50,
+            // Carousel reveal
+            gsap.from('.carousel-item', {
+                x: 100,
                 opacity: 0,
-                duration: 0.8,
-                stagger: 0.15,
-                ease: "power3.out",
+                duration: 1,
+                stagger: 0.1,
+                ease: "power4.out",
                 scrollTrigger: {
                     trigger: galleryRef.current,
-                    start: "top 80%"
+                    start: "top 75%"
                 }
             });
 
@@ -94,8 +94,8 @@ export default function Werkplaats() {
         "/Images/Werkplaats_2.webp",
         "/Images/Werkplaats_3.webp",
         "/Images/Werkplaats_4.webp",
-        "/Images/Werkplaats_5.webp",
-        "/Images/Werkplaats 6.webp",
+        "/Images/Licht.webp",
+        "/Images/Werkplaats_6.webp",
         "/Images/Werkplaats_7.webp",
         "/Images/Werkplaats_9.webp"
     ];
@@ -117,7 +117,7 @@ export default function Werkplaats() {
                                 Professionaliteit tot in de details
                             </p>
                             <p className="leading-relaxed">
-                                Een schone, georganiseerde en goed verlichte werkplaats vormt de basis van ons werk. Hier krijgt elke motor, scooter en brommer de aandacht en zorg die het verdient, met precisie-gereedschap en vakkennis.
+                                Met hoogwaardig gereedschap en professionele apparatuur leveren wij werk van hoog niveau. Hier krijgt elke motor, scooter en brommer de aandacht en zorg die het verdient, met precisie en vakkennis.
                             </p>
                         </div>
                     </div>
@@ -138,22 +138,43 @@ export default function Werkplaats() {
                         />
                     </div>
 
-                    <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-                        {galleryImages.map((src, index) => (
-                            <div key={index} className="gallery-item break-inside-avoid border-4 border-brutal-paper p-2 bg-brutal-offwhite group overflow-hidden relative">
-                                <img
-                                    src={src}
-                                    alt={`Werkplaats detail ${index + 1}`}
-                                    className="w-full h-auto object-cover filter transition-transform duration-700 ease-out group-hover:scale-105"
-                                    loading="lazy"
-                                />
-                                {/* Crosshair overlay on hover */}
-                                <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <div className="w-16 h-[2px] bg-brutal-red mix-blend-difference absolute"></div>
-                                    <div className="h-16 w-[2px] bg-brutal-red mix-blend-difference absolute"></div>
-                                </div>
-                            </div>
-                        ))}
+                    {/* Drag-to-scroll reel */}
+                    <div className="relative mt-8 group/carousel">
+                        <div
+                            className="flex gap-8 overflow-x-auto pb-12 pt-4 px-4 no-scrollbar cursor-grab active:cursor-grabbing snap-x snap-mandatory"
+                            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                        >
+                            {galleryImages.map((src, index) => {
+                                // Subtle random rotations for that hand-placed neobrutalist look
+                                const rotations = ['-rotate-1', 'rotate-1', '-rotate-2', 'rotate-2', 'rotate-0'];
+                                const rotation = rotations[index % rotations.length];
+
+                                return (
+                                    <div
+                                        key={index}
+                                        className={`carousel-item flex-none w-[300px] md:w-[450px] aspect-[4/3] border-4 border-brutal-black bg-white shadow-[12px_12px_0_#E63B2E] transition-all duration-500 hover:shadow-[20px_20px_0_#111111] hover:-translate-y-2 hover:rotate-0 group snap-center ${rotation}`}
+                                    >
+                                        <div className="absolute top-4 left-4 z-20 font-mono text-xs font-bold bg-brutal-black text-white px-3 py-1 border-2 border-brutal-black uppercase tracking-widest">
+                                            [ {String(index + 1).padStart(2, '0')} ]
+                                        </div>
+                                        <img
+                                            src={src}
+                                            alt={`Werkplaats detail ${index + 1}`}
+                                            className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700"
+                                            loading="lazy"
+                                        />
+                                        <div className="absolute bottom-4 right-4 z-20 font-mono text-[10px] font-bold text-white bg-brutal-red px-2 py-1 uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            Werkplaats // Op Dreef
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Scroll indicator overlay for drag hint */}
+                        <div className="absolute -bottom-4 right-0 font-mono text-[10px] sm:text-xs text-brutal-red flex items-center gap-2 font-bold animate-pulse">
+                            SWIPE OM TE ONTDEKKEN <ChevronRight size={14} />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -168,7 +189,7 @@ export default function Werkplaats() {
                             text="Meer dan alleen sleutelen"
                         />
                         <p className="font-mono text-lg max-w-2xl mx-auto text-brutal-black/80">
-                            Terwijl wij met passie aan je tweewieler werken, zorgen wij ervoor dat jij—en je gezelschap—je helemaal thuis voelen op dreef.
+                            Terwijl wij met passie aan je tweewieler werken, zorgen wij ervoor dat jij - en je gezelschap - je helemaal thuis voelen bij op dreef.
                         </p>
                     </div>
 
@@ -176,7 +197,7 @@ export default function Werkplaats() {
                         {/* Speelhoek */}
                         <div className="hospitality-card flex flex-col border-4 border-brutal-black bg-brutal-offwhite p-6 md:p-10 shadow-[8px_8px_0_rgba(0,0,0,1)] hover:translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0_rgba(0,0,0,1)] transition-all duration-300">
                             <h4 className="font-grotesk font-bold text-3xl uppercase tracking-tight text-brutal-black mb-6 flex items-center gap-3">
-                                De Speelhoek <span className="bg-brutal-red text-brutal-paper text-xs py-1 px-3 rounded-full tracking-widest">KIDS WELCOME</span>
+                                Speelhoek <span className="bg-brutal-red text-brutal-paper text-xs py-1 px-3 rounded-full tracking-widest">KIDS WELKOM</span>
                             </h4>
                             <div className="mb-8 border-4 border-brutal-black overflow-hidden relative group">
                                 <img
@@ -186,7 +207,7 @@ export default function Werkplaats() {
                                 />
                             </div>
                             <p className="font-mono text-brutal-black opacity-80 leading-relaxed max-w-sm">
-                                Wachten hoeft niet saai te zijn. We hebben een speciale, veilige speelhoek ingericht zodat ook de kleinste monteurs in de dop zich uitstekend vermaken terwijl wij jouw motor in topconditie brengen. De koffie staat klaar!
+                                Wachten hoeft niet saai te zijn. We hebben een speciale, veilige speelhoek ingericht zodat ook de kleinste monteurs in de dop zich uitstekend vermaken terwijl wij jouw voertuig in topconditie brengen. De koffie staat klaar!
                             </p>
                         </div>
 
@@ -195,22 +216,19 @@ export default function Werkplaats() {
                             <h4 className="font-grotesk font-bold text-3xl uppercase tracking-tight text-brutal-black mb-6">
                                 Geef Passie Cadeau
                             </h4>
-                            <div className="mb-8 border-4 border-brutal-black overflow-hidden relative group p-8 bg-brutal-paper flex items-center justify-center min-h-[300px]">
+                            <div className="mb-8 border-4 border-brutal-black overflow-hidden relative group">
                                 <img
                                     src="/Images/Cadeaubon.webp"
                                     alt="Op Dreef Motoren Cadeaubon"
-                                    className="w-full h-auto max-h-[250px] object-contain filter drop-shadow-lg group-hover:scale-110 transition-transform duration-500 origin-center"
+                                    className="w-full h-[300px] object-cover filter transition-transform duration-500 scale-105 group-hover:scale-100"
                                 />
-                                {/* Decorative elements */}
-                                <div className="absolute top-4 left-4 w-4 h-4 rounded-full bg-brutal-red"></div>
-                                <div className="absolute bottom-4 right-4 w-4 h-4 rounded-full bg-brutal-red"></div>
                             </div>
                             <p className="font-mono text-brutal-black opacity-80 leading-relaxed max-w-sm mb-8">
-                                Op zoek naar het perfecte cadeau voor een motorliefhebber? Onze cadeaubonnen zijn in te wisselen voor al onze diensten, van een uitgebreide wasbeurt tot specialistisch onderhoud.
+                                Op zoek naar het perfecte cadeau voor een motorliefhebber? Onze cadeaubonnen zijn in te wisselen voor al onze diensten, van uitgebreid onderhoud tot specialistische reparaties.
                             </p>
                             <div className="mt-auto">
                                 <Link to="/contact" className="inline-flex items-center gap-2 border-b-2 border-brutal-black pb-1 text-brutal-black hover:text-brutal-red hover:border-brutal-red transition-colors font-mono uppercase tracking-widest text-sm font-bold">
-                                    Vraag ernaar in de winkel <ArrowUpRight size={16} />
+                                    Vraag ernaar in de werkplaats <ArrowUpRight size={16} />
                                 </Link>
                             </div>
                         </div>
@@ -227,7 +245,7 @@ export default function Werkplaats() {
                         text="Kom snel langs."
                     />
                     <p className="font-mono text-xl max-w-2xl mx-auto mb-16 text-brutal-black font-bold tracking-tight">
-                        De koffie staat klaar, de deuren staan open en onze monteurs kunnen niet wachten om te beginnen.
+                        De koffie staat klaar, de deuren staan open en onze gedreven monteurs kunnen niet wachten om weer te starten aan een nieuwe dag.
                     </p>
                     <MagneticButton className="text-xl md:text-2xl py-6 px-12 !bg-brutal-red !text-white !border-2 !border-brutal-red hover:!bg-transparent hover:!text-brutal-red w-full md:w-auto uppercase font-bold tracking-wider transition-colors hover:!border-brutal-red text-center flex justify-center shadow-[4px_4px_0_rgba(0,0,0,1)] active:translate-y-[2px] active:shadow-none cursor-pointer group">
                         <Link to="/contact" className="w-full h-full flex items-center justify-center">

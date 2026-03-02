@@ -81,6 +81,10 @@ export default function Layout() {
                         <p className="mb-2">Dijk van Bommenede 74</p>
                         <p className="mb-2">4316 AT, Zonnemaire</p>
                         <p className="text-brutal-red font-bold">KvK: 87091623</p>
+                        <div className="mt-4 flex items-center gap-2 opacity-60">
+                            <img src="/Images/RDW_Logo.jpeg" alt="RDW Erkend" className="h-10 w-auto rounded-sm" />
+                            <span className="text-xs uppercase tracking-widest text-brutal-offwhite">RDW Erkend</span>
+                        </div>
                     </div>
 
                     <div>
@@ -95,7 +99,7 @@ export default function Layout() {
                     </div>
 
                     <div>
-                        <h4 className="font-bold text-brutal-red text-lg uppercase mb-4 tracking-widest">Connect</h4>
+                        <h4 className="font-bold text-brutal-red text-lg uppercase mb-4 tracking-widest">Contact</h4>
                         <div className="flex flex-col gap-2 opacity-80">
                             <a href="https://www.facebook.com/BrainYourBody" target="_blank" rel="noopener noreferrer" className="hover:text-brutal-red hover:underline decoration-2">Facebook</a>
                             <a href="https://www.instagram.com/opdreef_motoren/" target="_blank" rel="noopener noreferrer" className="hover:text-brutal-red hover:underline decoration-2">Instagram</a>
