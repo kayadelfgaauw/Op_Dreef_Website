@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ChevronRight, ArrowUpRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
 import SplitTextReveal from '../components/SplitTextReveal';
 import MagneticButton from '../components/MagneticButton';
 import { Link } from 'react-router-dom';
@@ -13,6 +13,7 @@ export default function Werkplaats() {
     const heroRef = useRef(null);
     const introRef = useRef(null);
     const galleryRef = useRef(null);
+    const scrollRef = useRef(null);
     const hospitalityRef = useRef(null);
     const ctaRef = useRef(null);
 
@@ -90,6 +91,17 @@ export default function Werkplaats() {
         return () => ctx.revert();
     }, []);
 
+    const scrollCarousel = useCallback((direction) => {
+        if (!scrollRef.current) return;
+        const container = scrollRef.current;
+        const cardWidth = container.querySelector('.carousel-item')?.offsetWidth || 450;
+        const scrollAmount = cardWidth + 32; // card width + gap
+        container.scrollBy({
+            left: direction === 'right' ? scrollAmount : -scrollAmount,
+            behavior: 'smooth'
+        });
+    }, []);
+
     const galleryImages = [
         { src: "/Images/Werkplaats_1.webp", alt: "Eigenaar Sjoerd aan het werk aan een motorfiets in de werkplaats van Op Dreef Service." },
         { src: "/Images/Werkplaats_2.webp", alt: "Het aanzicht van het bedrijfspand van Op Dreef Motoren met verschillende scooters en motoren voor de geopende garagedeur." },
@@ -150,6 +162,7 @@ export default function Werkplaats() {
                     {/* Drag-to-scroll reel */}
                     <div className="relative mt-8 group/carousel">
                         <div
+                            ref={scrollRef}
                             className="flex gap-8 overflow-x-auto pb-12 pt-4 px-4 no-scrollbar cursor-grab active:cursor-grabbing snap-x snap-mandatory"
                             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
@@ -180,9 +193,22 @@ export default function Werkplaats() {
                             })}
                         </div>
 
-                        {/* Scroll indicator overlay for drag hint */}
-                        <div className="absolute -bottom-4 right-0 font-mono text-[10px] sm:text-xs text-brutal-red flex items-center gap-2 font-bold animate-pulse">
-                            SWIPE OM TE ONTDEKKEN <ChevronRight size={14} />
+                        {/* Navigation arrows */}
+                        <div className="flex items-center justify-end gap-3 mt-4">
+                            <button
+                                onClick={() => scrollCarousel('left')}
+                                aria-label="Vorige foto"
+                                className="group/btn relative w-14 h-14 bg-brutal-black border-3 border-brutal-black text-brutal-paper flex items-center justify-center shadow-[4px_4px_0_#E63B2E] hover:shadow-[6px_6px_0_#E63B2E] hover:-translate-x-0.5 hover:-translate-y-0.5 active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all duration-200 cursor-pointer"
+                            >
+                                <ChevronLeft size={24} className="transition-transform duration-200 group-hover/btn:-translate-x-0.5" />
+                            </button>
+                            <button
+                                onClick={() => scrollCarousel('right')}
+                                aria-label="Volgende foto"
+                                className="group/btn relative w-14 h-14 bg-brutal-red border-3 border-brutal-black text-brutal-paper flex items-center justify-center shadow-[4px_4px_0_#111111] hover:shadow-[6px_6px_0_#111111] hover:translate-x-0.5 hover:-translate-y-0.5 active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all duration-200 cursor-pointer"
+                            >
+                                <ChevronRight size={24} className="transition-transform duration-200 group-hover/btn:translate-x-0.5" />
+                            </button>
                         </div>
                     </div>
                 </div>

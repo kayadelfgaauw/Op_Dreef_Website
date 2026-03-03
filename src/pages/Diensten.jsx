@@ -162,7 +162,7 @@ export default function Diensten() {
                                     {service.title}
                                 </span>
                                 {/* Arrow line on hover */}
-                                <div className="ml-6 flex-1 h-1 relative hidden md:block mt-1">
+                                <div className="ml-6 flex-1 min-w-[60px] shrink-0 h-1 relative hidden md:block mt-1">
                                     <div className="absolute left-0 top-1/2 -translate-y-1/2 bg-brutal-red h-1 w-0 group-hover:w-[calc(100%-20px)] transition-all duration-500 ease-out z-20">
                                         <div className="absolute -right-1 top-1/2 -translate-y-1/2 w-4 h-4 border-t-[4px] border-r-[4px] border-brutal-red rotate-45 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200"></div>
                                     </div>
