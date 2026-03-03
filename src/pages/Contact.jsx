@@ -76,10 +76,10 @@ export default function Contact() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-4 font-bold text-sm tracking-widest">
-                            <a href="tel:+31000000000" className="flex items-center gap-2 p-4 border-2 border-brutal-black hover:bg-brutal-red hover:text-brutal-paper hover:border-brutal-red transition-colors group">
+                            <a href="tel:+31613989857" className="flex items-center gap-2 p-4 border-2 border-brutal-black hover:bg-brutal-red hover:text-brutal-paper hover:border-brutal-red transition-colors group">
                                 <Phone size={18} className="group-hover:animate-bounce" /> Bellen
                             </a>
-                            <a href="https://wa.me/31000000000" className="flex items-center gap-2 p-4 border-2 border-brutal-black hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-colors group">
+                            <a href="https://wa.me/31613989857" className="flex items-center gap-2 p-4 border-2 border-brutal-black hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-colors group">
                                 <MessageCircle size={18} className="group-hover:animate-bounce" /> WhatsApp
                             </a>
                             <a href="mailto:info@opdreefmotoren.nl" className="flex items-center gap-2 p-4 border-2 border-brutal-black hover:bg-brutal-black hover:text-brutal-paper transition-colors group">
