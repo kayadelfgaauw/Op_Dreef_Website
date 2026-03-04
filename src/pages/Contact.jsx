@@ -99,7 +99,7 @@ export default function Contact() {
                             {[
                                 { day: "Maandag", hours: "09:00 - 17:00" },
                                 { day: "Dinsdag", hours: "09:00 - 17:00" },
-                                { day: "Woensdag", hours: <><span className="block">11:00 - 17:00</span><span className="block">19:00 - 21:00</span></>, highlight: true },
+                                { day: "Woensdag", hours: <><span className="block">11:00 - 17:00</span><span className="block">19:30 - 21:00</span></>, highlight: true },
                                 { day: "Donderdag", hours: "09:00 - 17:00" },
                                 { day: "Vrijdag", hours: "09:00 - 17:00" },
                                 { day: "Zaterdag", hours: "11:00 - 17:00" },

@@ -47,7 +47,7 @@ export default function Layout() {
                     "openingHoursSpecification": [
                         { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"], "opens": "09:00", "closes": "17:00" },
                         { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "11:00", "closes": "17:00" },
-                        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "19:00", "closes": "21:00" },
+                        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "19:30", "closes": "21:00" },
                         { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "11:00", "closes": "17:00" }
                     ],
                     "sameAs": [
@@ -134,7 +134,7 @@ export default function Layout() {
                         <h4 className="font-bold text-brutal-red text-lg uppercase mb-4 tracking-widest">Openingstijden</h4>
                         <div className="grid grid-cols-2 gap-2 opacity-80">
                             <span>Ma-Di:</span><span>09:00 - 17:00</span>
-                            <span className="self-center">Woensdag:</span><span><span className="block">11:00 - 17:00</span><span className="block">19:00 - 21:00</span></span>
+                            <span className="self-center">Woensdag:</span><span><span className="block">11:00 - 17:00</span><span className="block">19:30 - 21:00</span></span>
                             <span>Do-Vr:</span><span>09:00 - 17:00</span>
                             <span>Zaterdag:</span><span>11:00 - 17:00</span>
                             <span>Zondag:</span><span className="text-brutal-red">Gesloten</span>
