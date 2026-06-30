@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import OnsTeam from './pages/OnsTeam';
 import Diensten from './pages/Diensten';
 import Contact from './pages/Contact';
 import Werkplaats from './pages/Werkplaats';
@@ -15,7 +14,6 @@ function App() {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
-                    <Route path="ons-team" element={<OnsTeam />} />
                     <Route path="werkplaats" element={<Werkplaats />} />
                     <Route path="diensten" element={<Diensten />} />
                     <Route path="contact" element={<Contact />} />

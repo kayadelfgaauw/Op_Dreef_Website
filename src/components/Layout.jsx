@@ -84,7 +84,6 @@ export default function Layout() {
                 {/* Desktop Menu */}
                 <div className="hidden md:flex gap-6 md:gap-8">
                     <NavLink to="/" className={getNavClass}>Home</NavLink>
-                    <NavLink to="/ons-team" className={getNavClass}>Ons <span className="-ml-1">Team</span></NavLink>
                     <NavLink to="/werkplaats" className={getNavClass}>Werkplaats</NavLink>
                     <NavLink to="/diensten" className={getNavClass}>Diensten</NavLink>
                     <NavLink to="/contact" className={getNavClass}>Contact</NavLink>
@@ -95,7 +94,6 @@ export default function Layout() {
             <div className={`fixed inset-0 z-40 bg-brutal-paper flex flex-col pt-[76px] transition-transform duration-300 ease-in-out md:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="flex-grow flex flex-col border-t-4 border-brutal-black">
                     <NavLink to="/" onClick={() => setIsMenuOpen(false)} className={getMobileNavClass}>Home</NavLink>
-                    <NavLink to="/ons-team" onClick={() => setIsMenuOpen(false)} className={getMobileNavClass}>Ons <span className="-ml-3 block inline-block">Team</span></NavLink>
                     <NavLink to="/werkplaats" onClick={() => setIsMenuOpen(false)} className={getMobileNavClass}>Werkplaats</NavLink>
                     <NavLink to="/diensten" onClick={() => setIsMenuOpen(false)} className={getMobileNavClass}>Diensten</NavLink>
                     <NavLink to="/contact" onClick={() => setIsMenuOpen(false)} className={getMobileNavClass}>Contact</NavLink>
