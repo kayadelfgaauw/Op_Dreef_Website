@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import NoiseOverlay from './NoiseOverlay';
+import AnnouncementPopup from './AnnouncementPopup';
 
 export default function Layout() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,6 +62,7 @@ export default function Layout() {
                 })}</script>
             </Helmet>
             <NoiseOverlay />
+            <AnnouncementPopup />
 
             {/* Navigation */}
             <nav aria-label="Hoofdnavigatie" className="fixed top-0 left-0 w-full z-50 bg-brutal-offwhite border-b-4 border-brutal-black px-6 py-4 flex justify-between items-center">
