@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function SplitTextReveal({ text, className = '', elementType: Element = 'p', delay = 0 }) {
     const containerRef = useRef(null);
+    const Tag = Element;
 
     // Very simplistic word splitter. In a real heavy GSAP app we'd use SplitText plugin, 
     // but since that's a paid GSAP club plugin, we fall back to generic CSS/JS word splitting
@@ -38,8 +39,8 @@ export default function SplitTextReveal({ text, className = '', elementType: Ele
     }, [text, delay]);
 
     return (
-        <Element ref={containerRef} className={className}>
+        <Tag ref={containerRef} className={className}>
             {words}
-        </Element>
+        </Tag>
     );
 }

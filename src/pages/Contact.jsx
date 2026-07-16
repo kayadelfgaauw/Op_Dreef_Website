@@ -49,6 +49,7 @@ export default function Contact() {
                 setTimeout(() => alert('Oeps! Er was een probleem bij het verzenden van het formulier.'), 500);
             }
         } catch (error) {
+            console.error('Contact form submission error:', error);
             setTimeout(() => alert('Er is een netwerkfout opgetreden, probeer het later opnieuw.'), 500);
         }
     };
