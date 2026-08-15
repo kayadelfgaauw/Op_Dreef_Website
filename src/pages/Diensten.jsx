@@ -98,9 +98,9 @@ export default function Diensten() {
                         className="w-full lg:w-1/2 relative z-0 lg:-mr-16 mb-12 lg:mb-0"
                     >
                         <img
-                            src="/Images/Diensten.webp"
+                            src="https://images.unsplash.com/photo-1616422285623-13ff0162193c?auto=format&fit=crop&q=80&w=1200"
                             alt="Onze Diensten"
-                            className="w-full h-[400px] lg:h-[600px] object-cover object-right border-8 border-brutal-black shadow-[15px_15px_0_#E63B2E] transition-transform duration-700 -rotate-2 hover:rotate-0"
+                            className="w-full h-[400px] lg:h-[600px] object-cover object-center border-8 border-brutal-black shadow-[15px_15px_0_#E63B2E] transition-transform duration-700 -rotate-2 hover:rotate-0"
                         />
                     </div>
 

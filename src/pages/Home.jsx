@@ -30,33 +30,7 @@ export default function Home() {
                 { filter: 'grayscale(0%) contrast(100%) brightness(1)', duration: 3, delay: 0.5 }
             );
 
-            // Over Ons Image Animation
-            gsap.fromTo('.intro-image-container',
-                { y: 50, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 1,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: overOnsRef.current,
-                        start: "top 70%",
-                    }
-                }
-            );
 
-            gsap.fromTo('.intro-image',
-                { filter: 'grayscale(60%) contrast(110%) brightness(0.9)', opacity: 0.6 },
-                {
-                    filter: 'grayscale(0%) contrast(100%) brightness(1)',
-                    opacity: 1,
-                    duration: 2,
-                    scrollTrigger: {
-                        trigger: overOnsRef.current,
-                        start: "top 65%",
-                    }
-                }
-            );
 
             // USP Hover Inversions (Handled via CSS group-hover mainly, but entrance via GSAP)
             gsap.from('.usp-card', {
@@ -163,38 +137,24 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* OVER ONS - SPLIT SCREEN */}
+            {/* OVER ONS */}
             <section ref={overOnsRef} className="py-32 px-6 border-b-4 border-brutal-black bg-brutal-paper">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-stretch">
-                    <div className="flex flex-col justify-center">
-                        <h2 className="font-mono text-brutal-red text-sm tracking-widest uppercase mb-4 border-b-2 border-brutal-red pb-2 inline-block w-fit">
-                            [ OVER OP DREEF MOTOREN ]
-                        </h2>
-                        <SplitTextReveal
-                            elementType="h3"
-                            className="font-grotesk font-bold text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight mb-8 leading-none"
-                            text="passie voor techniek & tweewielers"
-                        />
-                        <div className="font-mono text-brutal-black/80 space-y-6 text-sm md:text-base max-w-md">
-                            <p>
-                                Of je nu een doorgewinterde motorrijder bent of je scooter dagelijks gebruikt voor woon-werkverkeer, wij zorgen ervoor dat je voertuig in topconditie blijft.
-                            </p>
-                            <p>
-                                Vanuit onze werkplaats in Renesse bieden we een breed scala aan diensten aan. Van een snelle check-up tot complexe reparaties en custom projecten. Wij onderscheiden ons door onze persoonlijke aanpak, transparante communicatie en flexibele service.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="intro-image-container relative w-full group perspective-1000">
-                        <div className="relative border-4 border-brutal-black p-4 bg-white rounded-[2rem] transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:translate-x-2 z-10 w-full">
-                            <div className="absolute inset-0 border-4 border-brutal-black rounded-[2rem] -translate-x-4 translate-y-4 -z-10 bg-black mix-blend-overlay"></div>
-                            <img
-                                src="/Images/Introductie.webp"
-                                alt="Het team van Op Dreef Service aan het werk in een modern verlichte werkplaats in Renesse, waarbij meerdere monteurs gelijktijdig onderhoud plegen aan verschillende motoren op heftafels."
-                                loading="lazy"
-                                className="intro-image w-full h-[500px] lg:h-[600px] object-cover object-[70%_center] mix-blend-multiply rounded-[1.5rem]"
-                            />
-                        </div>
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="font-mono text-brutal-red text-sm tracking-widest uppercase mb-4 border-b-2 border-brutal-red pb-2 inline-block w-fit">
+                        [ OVER OP DREEF MOTOREN ]
+                    </h2>
+                    <SplitTextReveal
+                        elementType="h3"
+                        className="font-grotesk font-bold text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight mb-8 leading-none"
+                        text="passie voor techniek & tweewielers"
+                    />
+                    <div className="font-mono text-brutal-black/80 space-y-6 text-sm md:text-base max-w-2xl">
+                        <p>
+                            Of je nu een doorgewinterde motorrijder bent of je scooter dagelijks gebruikt voor woon-werkverkeer, wij zorgen ervoor dat je voertuig in topconditie blijft.
+                        </p>
+                        <p>
+                            Vanuit onze werkplaats in Renesse bieden we een breed scala aan diensten aan. Van een snelle check-up tot complexe reparaties en custom projecten. Wij onderscheiden ons door onze persoonlijke aanpak, transparante communicatie en flexibele service.
+                        </p>
                     </div>
                 </div>
             </section>
