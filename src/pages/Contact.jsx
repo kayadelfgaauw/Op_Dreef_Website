@@ -58,7 +58,7 @@ export default function Contact() {
         <div ref={containerRef} className="w-full bg-brutal-paper min-h-screen pt-32 pb-40 px-6 uppercase font-mono text-brutal-black">
             <Helmet>
                 <title>Contact | Op Dreef Motoren – Maak een Afspraak</title>
-                <meta name="description" content="Neem contact op met Op Dreef Motoren in Renesse. Bel, WhatsApp of mail ons voor een afspraak. Openingstijden ma-za, ook in de avonduren." />
+                <meta name="description" content="Neem contact op met Op Dreef Motoren in Renesse. Bel, WhatsApp of mail ons voor een afspraak." />
                 <link rel="canonical" href="https://opdreefmotoren.nl/contact" />
                 <meta property="og:title" content="Contact | Op Dreef Motoren" />
                 <meta property="og:description" content="Neem contact op voor onderhoud of reparatie van je motor, scooter of brommer in Renesse." />
@@ -66,9 +66,9 @@ export default function Contact() {
             </Helmet>
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 relative">
 
-                {/* LEFT COLUMN: Data & Hours */}
+                {/* LEFT COLUMN: Contact info */}
                 <div className="contact-element flex flex-col pt-12">
-                    <div className="mb-16 border-b-4 border-brutal-black pb-8">
+                    <div>
                         <h1 className="font-grotesk font-black text-5xl md:text-7xl uppercase tracking-tighter mb-6 leading-none">
                             Contact
                         </h1>
@@ -88,39 +88,10 @@ export default function Contact() {
                             </a>
                         </div>
                     </div>
-
-                    {/* Openingstijden Tabular Data */}
-                    <div className="contact-element border-4 border-brutal-black bg-white">
-                        <div className="bg-brutal-black text-brutal-paper px-4 py-2 font-bold flex justify-between tracking-widest text-sm">
-                            <span>OP DREEF MOTOREN</span>
-                            <span>OPENINGSTIJDEN</span>
-                        </div>
-
-                        <div className="divide-y-2 divide-brutal-black">
-                            {[
-                                { day: "Maandag", hours: "09:00 - 17:00" },
-                                { day: "Dinsdag", hours: "09:00 - 17:00" },
-                                { day: "Woensdag", hours: <><span className="block">11:00 - 17:00</span><span className="block">19:30 - 21:00</span></>, highlight: true },
-                                { day: "Donderdag", hours: "09:00 - 17:00" },
-                                { day: "Vrijdag", hours: "09:00 - 17:00" },
-                                { day: "Zaterdag", hours: "11:00 - 17:00" },
-                                { day: "Zondag", hours: "GESLOTEN", closed: true },
-                            ].map((time, idx) => (
-                                <div key={idx} className={`grid grid-cols-2 items-center p-4 font-bold group cursor-pointer transition-colors ${time.closed ? "bg-brutal-black text-brutal-paper opacity-50 block" : "hover:bg-[#25D366] text-brutal-black hover:text-white"}`}>
-                                    <div className="tracking-widest">{time.day}</div>
-                                    <div className={`text-right ${time.closed ? "text-brutal-red" : ""}`}>{time.hours}</div>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="p-4 bg-brutal-offwhite text-xs border-t-2 border-brutal-black leading-relaxed opacity-70 border-l-4 border-l-brutal-red">
-                            <span className="font-bold text-brutal-red">LET OP:</span> Het kan voorkomen dat wij tijdens openingstijden kort afwezig zijn i.v.m. de pick-up service of testritten. Bel ons gerust voordat u langs wilt komen.
-                        </div>
-                    </div>
                 </div>
 
                 {/* RIGHT COLUMN: The Form */}
-                <div className="contact-element lg:pt-32">
+                <div className="contact-element pt-0 lg:pt-12">
                     <div className="border-l-8 border-t-8 border-brutal-black p-8 md:p-12 relative bg-brutal-offwhite shadow-[16px_16px_0_#E63B2E]">
                         <div className="absolute top-0 right-0 p-2 font-bold text-sm tracking-widest opacity-30 select-none">
                             CONTACTFORMULIER
