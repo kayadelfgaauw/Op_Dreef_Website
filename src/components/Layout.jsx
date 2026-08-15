@@ -27,30 +27,24 @@ export default function Layout() {
                     "name": "Op Dreef Motoren",
                     "description": "Hét adres voor onderhoud, reparatie en service van je motor, scooter of brommer op Schouwen-Duiveland.",
                     "url": "https://opdreefmotoren.nl",
-                    "telephone": "+31613989857",
+                    "telephone": "+31615109769",
                     "email": "contact@opdreefmotoren.nl",
                     "address": {
                         "@type": "PostalAddress",
-                        "streetAddress": "Dijk van Bommenede 74",
-                        "addressLocality": "Zonnemaire",
-                        "postalCode": "4316 AT",
+                        "streetAddress": "Duinzoom 5",
+                        "addressLocality": "Renesse",
+                        "postalCode": "4325 HA",
                         "addressRegion": "Zeeland",
                         "addressCountry": "NL"
                     },
                     "geo": {
                         "@type": "GeoCoordinates",
-                        "latitude": 51.7194,
-                        "longitude": 3.8489
+                        "latitude": 51.7288,
+                        "longitude": 3.7725
                     },
                     "logo": "https://opdreefmotoren.nl/Logo/Logo.png",
                     "image": "https://opdreefmotoren.nl/Logo/Logo.png",
                     "priceRange": "€€",
-                    "openingHoursSpecification": [
-                        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"], "opens": "09:00", "closes": "17:00" },
-                        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "11:00", "closes": "17:00" },
-                        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "19:30", "closes": "21:00" },
-                        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "11:00", "closes": "17:00" }
-                    ],
                     "sameAs": [
                         "https://www.instagram.com/opdreef_motoren/",
                         "https://www.facebook.com/BrainYourBody"
@@ -103,7 +97,7 @@ export default function Layout() {
                 {/* Mobile Menu Footer Element */}
                 <div className="bg-brutal-black text-brutal-offwhite p-6 mt-auto">
                     <div className="font-mono text-sm uppercase tracking-widest text-center">
-                        <p className="mb-2">Dijk van Bommenede 74</p>
+                        <p className="mb-2">Duinzoom 5, 4325 HA Renesse</p>
                         <p className="text-brutal-red font-bold">Wij sleutelen, jij blijft op dreef.</p>
                     </div>
                 </div>
@@ -116,29 +110,14 @@ export default function Layout() {
 
             {/* Footer */}
             <footer role="contentinfo" className="bg-brutal-black text-brutal-paper border-t-8 border-brutal-red py-12 px-6">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 font-mono text-sm">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 font-mono text-sm">
                     <div>
                         <div className="flex items-center gap-2 font-grotesk font-bold text-2xl uppercase tracking-tighter mb-6 text-brutal-offwhite">
                             <img src="/Logo/Logo.png" alt="Op Dreef Motoren Logo" className="h-12 w-auto" />
                         </div>
-                        <p className="mb-2">Dijk van Bommenede 74</p>
-                        <p className="mb-2">4316 AT, Zonnemaire</p>
-                        <p className="text-brutal-red font-bold">KvK: 87091623</p>
-                        <div className="mt-4 flex items-center gap-2 opacity-60">
-                            <img src="/Images/RDW_Logo.jpeg" alt="RDW Erkend" className="h-10 w-auto rounded-sm" />
-                            <span className="text-xs uppercase tracking-widest text-brutal-offwhite">RDW Erkend</span>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h4 className="font-bold text-brutal-red text-lg uppercase mb-4 tracking-widest">Openingstijden</h4>
-                        <div className="grid grid-cols-2 gap-2 opacity-80">
-                            <span>Ma-Di:</span><span>09:00 - 17:00</span>
-                            <span className="self-center">Woensdag:</span><span><span className="block">11:00 - 17:00</span><span className="block">19:30 - 21:00</span></span>
-                            <span>Do-Vr:</span><span>09:00 - 17:00</span>
-                            <span>Zaterdag:</span><span>11:00 - 17:00</span>
-                            <span>Zondag:</span><span className="text-brutal-red">Gesloten</span>
-                        </div>
+                        <p className="mb-2">Duinzoom 5</p>
+                        <p className="mb-2">4325 HA, Renesse</p>
+                        <p className="text-brutal-red font-bold">Kvk 68996616</p>
                     </div>
 
                     <div>
@@ -147,7 +126,7 @@ export default function Layout() {
                             <a href="https://www.facebook.com/BrainYourBody" target="_blank" rel="noopener noreferrer" className="hover:text-brutal-red hover:underline decoration-2">Facebook</a>
                             <a href="https://www.instagram.com/opdreef_motoren/" target="_blank" rel="noopener noreferrer" className="hover:text-brutal-red hover:underline decoration-2">Instagram</a>
                             <a href="mailto:contact@opdreefmotoren.nl" className="hover:text-brutal-red hover:underline decoration-2">Email</a>
-                            <a href="tel:+31613989857" className="hover:text-brutal-red hover:underline decoration-2">0613989857</a>
+                            <a href="tel:+31615109769" className="hover:text-brutal-red hover:underline decoration-2">0615109769</a>
                         </div>
                         <p className="mt-6 border-t border-gray-800 pt-4 text-xs opacity-50">
                             Wij sleutelen, jij blijft op dreef.
@@ -158,7 +137,7 @@ export default function Layout() {
 
             {/* Sticky WhatsApp Icon */}
             <a
-                href="https://wa.me/31613989857"
+                href="https://wa.me/31615109769"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-4 border-brutal-black hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 flex items-center justify-center group"

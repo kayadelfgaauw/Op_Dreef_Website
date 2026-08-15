@@ -117,10 +117,10 @@ export default function Werkplaats() {
         <div className="w-full bg-brutal-paper selection:bg-brutal-red selection:text-brutal-paper pb-20">
             <Helmet>
                 <title>Werkplaats | Op Dreef Motoren – Onze Ruimte & Faciliteiten</title>
-                <meta name="description" content="Bekijk de werkplaats van Op Dreef Motoren in Zonnemaire. Professionele apparatuur, speelhoek voor kinderen en een warm welkom met koffie." />
+                <meta name="description" content="Bekijk de werkplaats van Op Dreef Motoren in Renesse. Professionele apparatuur, speelhoek voor kinderen en een warm welkom met koffie." />
                 <link rel="canonical" href="https://opdreefmotoren.nl/werkplaats" />
                 <meta property="og:title" content="Werkplaats | Op Dreef Motoren" />
-                <meta property="og:description" content="Onze professioneel ingerichte werkplaats in Zonnemaire – met speelhoek en koffie." />
+                <meta property="og:description" content="Onze professioneel ingerichte werkplaats in Renesse – met speelhoek en koffie." />
                 <meta property="og:url" content="https://opdreefmotoren.nl/werkplaats" />
             </Helmet>
             {/* HERO SECTION */}

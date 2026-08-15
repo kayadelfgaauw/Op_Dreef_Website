@@ -113,8 +113,8 @@ export default function Home() {
     return (
         <div ref={heroRef} className="w-full">
             <Helmet>
-                <title>Op Dreef Motoren | Motor, Scooter & Brommer Service in Zonnemaire</title>
-                <meta name="description" content="Op Dreef Motoren in Zonnemaire – hét adres voor onderhoud, reparatie en service van je motor, scooter of brommer op Schouwen-Duiveland. Flexibel, vakkundig en persoonlijk." />
+                <title>Op Dreef Motoren | Motor, Scooter & Brommer Service in Renesse</title>
+                <meta name="description" content="Op Dreef Motoren in Renesse – hét adres voor onderhoud, reparatie en service van je motor, scooter of brommer op Schouwen-Duiveland. Flexibel, vakkundig en persoonlijk." />
                 <link rel="canonical" href="https://opdreefmotoren.nl/" />
                 <meta property="og:title" content="Op Dreef Motoren | Motor, Scooter & Brommer Service" />
                 <meta property="og:description" content="Hét adres voor onderhoud, reparatie en service van je motor, scooter of brommer op Schouwen-Duiveland." />
@@ -180,7 +180,7 @@ export default function Home() {
                                 Of je nu een doorgewinterde motorrijder bent of je scooter dagelijks gebruikt voor woon-werkverkeer, wij zorgen ervoor dat je voertuig in topconditie blijft.
                             </p>
                             <p>
-                                Vanuit onze werkplaats in Zonnemaire bieden we een breed scala aan diensten aan. Van een snelle check-up tot complexe reparaties en custom projecten. Wij onderscheiden ons door onze persoonlijke aanpak, transparante communicatie en flexibele service.
+                                Vanuit onze werkplaats in Renesse bieden we een breed scala aan diensten aan. Van een snelle check-up tot complexe reparaties en custom projecten. Wij onderscheiden ons door onze persoonlijke aanpak, transparante communicatie en flexibele service.
                             </p>
                         </div>
                     </div>
@@ -190,7 +190,7 @@ export default function Home() {
                             <div className="absolute inset-0 border-4 border-brutal-black rounded-[2rem] -translate-x-4 translate-y-4 -z-10 bg-black mix-blend-overlay"></div>
                             <img
                                 src="/Images/Introductie.webp"
-                                alt="Het team van Op Dreef Service aan het werk in een modern verlichte werkplaats in Zonnemaire, waarbij meerdere monteurs gelijktijdig onderhoud plegen aan verschillende motoren op heftafels."
+                                alt="Het team van Op Dreef Service aan het werk in een modern verlichte werkplaats in Renesse, waarbij meerdere monteurs gelijktijdig onderhoud plegen aan verschillende motoren op heftafels."
                                 loading="lazy"
                                 className="intro-image w-full h-[500px] lg:h-[600px] object-cover object-[70%_center] mix-blend-multiply rounded-[1.5rem]"
                             />

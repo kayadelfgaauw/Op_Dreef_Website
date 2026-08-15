@@ -108,11 +108,11 @@ export default function AnnouncementPopup() {
                     {/* Action Row */}
                     <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-2 md:mt-4">
                         <a 
-                            href="tel:+31613989857"
+                            href="tel:+31615109769"
                             className="flex-1 flex items-center justify-center gap-2 p-2.5 md:p-4 border-2 md:border-4 border-brutal-black bg-brutal-black text-brutal-paper hover:bg-brutal-red hover:text-brutal-black transition-all font-bold uppercase tracking-wider text-xs md:text-sm shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] md:hover:translate-x-[2px] md:hover:translate-y-[2px] md:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
                         >
                             <Phone className="w-3.5 h-3.5 md:w-4.5 md:h-4.5" strokeWidth={2.5} />
-                            Bel direct: 0613989857
+                            Bel direct: 0615109769
                         </a>
                         <button
                             onClick={handleClose}
