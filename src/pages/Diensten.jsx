@@ -28,7 +28,6 @@ const services = [
 export default function Diensten() {
     const containerRef = useRef(null);
     const headerDrawerRef = useRef(null);
-    const imageRef = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -40,23 +39,6 @@ export default function Diensten() {
                 ease: "power4.out",
                 delay: 0.2
             });
-
-            // Image slide in effect
-            if (imageRef.current) {
-                gsap.from(imageRef.current, {
-                    xPercent: -50,
-                    opacity: 0,
-                    rotation: -10,
-                    duration: 1.2,
-                    ease: "power4.out",
-                    delay: 0.4
-                });
-
-                gsap.fromTo(imageRef.current.querySelector('img'),
-                    { filter: 'grayscale(60%) contrast(110%) brightness(0.9)' },
-                    { filter: 'grayscale(0%) contrast(100%) brightness(1)', duration: 3, delay: 0.5 }
-                );
-            }
 
             // Airport departure board stagger
             gsap.from('.service-row', {
@@ -88,35 +70,23 @@ export default function Diensten() {
                 <meta property="og:url" content="https://opdreefmotoren.nl/diensten" />
             </Helmet>
 
-            {/* HEADER: Index Card Flip Mechanism */}
+            {/* HEADER */}
             <section className="pt-32 px-6 mb-20 overflow-hidden relative">
-                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-center relative">
+                <div className="max-w-4xl mx-auto relative">
 
-                    {/* Image Section (Left) */}
-                    <div
-                        ref={imageRef}
-                        className="w-full lg:w-1/2 relative z-0 lg:-mr-16 mb-12 lg:mb-0"
-                    >
-                        <img
-                            src="https://images.unsplash.com/photo-1616422285623-13ff0162193c?auto=format&fit=crop&q=80&w=1200"
-                            alt="Onze Diensten"
-                            className="w-full h-[400px] lg:h-[600px] object-cover object-center border-8 border-brutal-black shadow-[15px_15px_0_#E63B2E] transition-transform duration-700 -rotate-2 hover:rotate-0"
-                        />
-                    </div>
-
-                    {/* Text Section (Right) */}
+                    {/* Text Section */}
                     <div
                         ref={headerDrawerRef}
-                        className="w-full lg:w-2/3 bg-brutal-black text-brutal-paper p-12 lg:p-20 border-l-8 border-brutal-red relative shadow-[-20px_20px_0_#111111] z-10 lg:ml-auto"
+                        className="w-full bg-brutal-offwhite text-brutal-black p-12 lg:p-20 border-l-8 border-brutal-red border-t-4 border-b-4 border-r-4 border-brutal-black relative shadow-[20px_20px_0_#111111] z-10"
                     >
                         <div className="absolute top-4 right-4 font-mono text-xs opacity-50 uppercase tracking-widest">
                             OVERZICHT DIENSTEN
                         </div>
-                        <h1 className="font-grotesk font-black text-5xl md:text-7xl uppercase mb-8 text-brutal-offwhite tracking-tighter shadow-sm" style={{ hyphens: 'none', wordBreak: 'normal' }}>
+                        <h1 className="font-grotesk font-black text-5xl md:text-7xl uppercase mb-8 text-brutal-black tracking-tighter" style={{ hyphens: 'none', wordBreak: 'normal' }}>
                             Alles onder <br /><span className="text-brutal-red">één dak.</span>
                         </h1>
-                        <div className="font-mono text-lg md:text-xl max-w-xl leading-relaxed mb-12">
-                            Bij Op Dreef Motoren ben je aan het juiste adres voor alles wat je motor, scooter of brommer nodig heeft. Van regulier onderhoud en reparaties tot maatwerkprojecten en alles daartussenin. Wij bieden <span className="font-bold text-brutal-offwhite">complete service</span> in <span className="font-bold text-brutal-offwhite">Schouwen-Duiveland en omgeving</span>.
+                        <div className="font-mono text-lg md:text-xl max-w-2xl leading-relaxed mb-12 text-brutal-black/80">
+                            Bij Op Dreef Motoren ben je aan het juiste adres voor alles wat je motor, scooter of brommer nodig heeft. Van regulier onderhoud en reparaties tot maatwerkprojecten en alles daartussenin. Wij bieden <span className="font-bold text-brutal-black">complete service</span> in <span className="font-bold text-brutal-black">Schouwen-Duiveland en omgeving</span>.
                         </div>
 
                         <div className="flex items-center gap-4">
@@ -131,7 +101,7 @@ export default function Diensten() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                                 </svg>
                             </button>
-                            <span className="font-mono text-sm uppercase tracking-widest text-brutal-red">
+                            <span className="font-mono text-sm uppercase tracking-widest text-brutal-red font-bold">
                                 Ontdek onze diensten
                             </span>
                         </div>
